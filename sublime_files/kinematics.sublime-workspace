@@ -1,0 +1,743 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"V",
+				"V"
+			],
+			[
+				"files",
+				"filesIO"
+			],
+			[
+				"file",
+				"filesIO"
+			],
+			[
+				"array",
+				"arrayOfPaths"
+			],
+			[
+				"arr",
+				"arrayOfUnits"
+			],
+			[
+				"param",
+				"parameter"
+			],
+			[
+				"un",
+				"unitUV"
+			],
+			[
+				"unit",
+				"unitVW"
+			],
+			[
+				"o",
+				"o"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"high",
+				"highestCoordinate"
+			],
+			[
+				"line",
+				"linear_algebra"
+			],
+			[
+				"coor",
+				"coord_transform"
+			],
+			[
+				"num",
+				"numberOfWDsInBin"
+			],
+			[
+				"subr",
+				"subroutine"
+			],
+			[
+				"incoo",
+				"incooldb2"
+			],
+			[
+				"inc",
+				"incooldb"
+			],
+			[
+				"cooli",
+				"coolingTime"
+			],
+			[
+				"ran",
+				"random_number_generators"
+			],
+			[
+				"exter",
+				"external_types"
+			],
+			[
+				"volum",
+				"volum_40pc"
+			],
+			[
+				"incool",
+				"incoolone"
+			],
+			[
+				"interlum",
+				"interlumdb"
+			],
+			[
+				"lumino",
+				"luminosities"
+			],
+			[
+				"te",
+				"temporary_files"
+			],
+			[
+				"ob",
+				"observational_LF"
+			],
+			[
+				"DA",
+				"DA_colors"
+			],
+			[
+				"in",
+				"in"
+			],
+			[
+				"obse",
+				"observational_data"
+			],
+			[
+				"DA_",
+				"DA_Tracks"
+			],
+			[
+				"paramete",
+				"parameter_grids"
+			],
+			[
+				"color",
+				"color_tables"
+			],
+			[
+				"output",
+				"output_data"
+			],
+			[
+				"input",
+				"input_data"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/home/gemma/Documents/program/additional_programs/kinematics/kinematics.sublime-project",
+			"settings":
+			{
+				"buffer_size": 45,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Fortran/build-systems/GFortran.sublime-build",
+					""
+				],
+				[
+					"Packages/Fortran/build-systems/GFortran.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/Fortran/build-systems/GFortran.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/velocities.sublime-build",
+					""
+				],
+				[
+					"Packages/User/velocities.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/User/velocities.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/User/velocities.sublime-build",
+					""
+				],
+				[
+					"Packages/User/velocities.sublime-build",
+					"Run module"
+				]
+			],
+			[
+				"Packages/User/velocities.sublime-build",
+				"Run module"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 92.0,
+		"last_filter": "remove",
+		"selected_items":
+		[
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 392.0
+	},
+	"console":
+	{
+		"height": 276.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/gemma/Documents/program/additional_programs/kinematics"
+	],
+	"file_history":
+	[
+		"/home/gemma/.config/sublime-text-3/Packages/User/velocities.sublime-build",
+		"/home/gemma/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/main.sh",
+		"/home/gemma/.config/sublime-text-3/Packages/User/EnvironmentSettings.sublime-settings",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/modules/dependants/astronomy.f90",
+		"/home/gemma/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/velocities_synth.sublime-project",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/velocities_synth.sublime-workspace",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/main.f90",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/modules/files.f90",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/modules/math.f90",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/modules/math.mod",
+		"/home/gemma/Documents/program/additional_programs/vel.sublime-project",
+		"/home/gemma/Documents/program/additional_programs/vel/velocities_synth/modules/files.f90",
+		"/home/gemma/Documents/program/additional_programs/vel/velocities_synth/readme.txt",
+		"/home/gemma/Documents/program/additional_programs/vel/velocities_synth/main.sh",
+		"/home/gemma/Documents/program/additional_programs/vel/velocities_synth/main.f90",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/outputs/vw.dat",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/outputs/uw.dat",
+		"/home/gemma/Documents/program/WD_population_40pc/main.f",
+		"/home/gemma/Documents/program/additional_programs/velocities_synth/modules/astronomy.f90",
+		"/home/gemma/Documents/program/WD_population_40pc/main.sh",
+		"/home/gemma/Documents/program/WD_population_40pc/code/star_generation/generator.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/velocities/velocities.f",
+		"/home/gemma/Documents/T_lang/main.html",
+		"/home/gemma/Documents/program/additional_programs/equator_to_gal/equator_to_gal.sh",
+		"/home/gemma/Documents/program/additional_programs/velocities/vel.f90",
+		"/home/gemma/Documents/program/WD_population_40pc/code/samples/volum_40pc.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/velocities/vrado.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/trajectories/trajectories.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/math/toSort.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/math/random_number_generators.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/magnitudes/magi.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/magnitudes/interp.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/magnitudes/ONe/interlumONe.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/magnitudes/DB/interlumdb.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/magnitudes/DA/intermag.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/magnitudes/DA/interlumda.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/luminosities/luminosities.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/coordinates/polar.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/coordinates/coor.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/cooling/unknown/incoolea.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/cooling/ONe/incoolone.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/cooling/DB/incooldb.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/cooling/DA/DA_cooling.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/colors/chanco.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/colors/DB/byBergeron.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/colors/DA/byRenedo.f",
+		"/home/gemma/Documents/program/WD_population_40pc/code/DA_DB_fraction/dbd_fid.f",
+		"/home/gemma/Documents/additional_programs/vel.f",
+		"/home/gemma/Documents/WD_population_40pc/main.f",
+		"/home/gemma/Documents/WD_population_40pc/input_data/observational_data/kinematics/Limoges2015.dat",
+		"/home/gemma/Documents/WD_population_40pc/input_data/observational_data/kinematics/Limoges2015",
+		"/home/gemma/Documents/texts/articles/kinematics/tab2.txt",
+		"/home/gemma/Documents/texts/articles/kinematics/tab4.txt",
+		"/home/gemma/Documents/texts/articles/kinematics/tab4.tex",
+		"/home/gemma/Documents/WD_population_40pc/code/colors/DB/byBergeron.f",
+		"/home/gemma/Documents/WD_population_40pc/code/colors/DA/byRenedo.f",
+		"/home/gemma/Documents/WD_population_40pc/code/cooling/DB/incooldb.f",
+		"/home/gemma/Documents/WD_population_40pc/code/cooling/DA/DA_cooling.f",
+		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/DA/interlumda.f",
+		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/DB/interlumdb.f",
+		"/home/gemma/Documents/WD_population_40pc/code/external_types.f",
+		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/DA/intermag.f",
+		"/home/gemma/Documents/WD_population_40pc/code/cooling/ONe/incoolone.f",
+		"/home/gemma/Documents/WD_population_40pc/code/tables_linking.f",
+		"/home/gemma/Documents/WD_population_40pc/code/math/toSort.f",
+		"/home/gemma/Documents/WD_population_40pc/main.sh",
+		"/home/gemma/Documents/WD_population_40pc/code/math/random_number_generators.f",
+		"/home/gemma/Documents/WD_population_40pc/code/velocities/vrado.f",
+		"/home/gemma/Documents/WD_population_40pc/code/samples/volum_40pc.f",
+		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/interp.f",
+		"/home/gemma/Documents/WD_population_40pc/code/colors/chanco.f",
+		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/ONe/interlumONe.f",
+		"/home/gemma/Documents/WD_population_40pc/code/DA_DB_fraction/dbd_fid.f",
+		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/magi.f",
+		"/home/gemma/Documents/WD_population_40pc/code/coordinates/coor.f",
+		"/home/gemma/Documents/WD_population_40pc/code/trajectories/trajectories.f",
+		"/home/gemma/Documents/WD_population_40pc/code/velocities/velocities.f",
+		"/home/gemma/Documents/WD_population_40pc/code/coordinates/polar.f",
+		"/home/gemma/Documents/WD_population_40pc/code/luminosities/luminosities.f",
+		"/home/gemma/Documents/WD_population_40pc/code/cooling/unknown/incoolea.f",
+		"/home/gemma/Documents/WD_population_40pc/code/star_generation/generator.f",
+		"/home/gemma/Documents/FL40_disk_copy/disk40.b"
+	],
+	"find":
+	{
+		"height": 21.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"averageVelocityInBin",
+			"sumOfVelocitiesInBin",
+			"numberOfWDsInBin",
+			"vel_motion",
+			"convertHoursToRad",
+			"DEC",
+			"RA",
+			"R",
+			"posAngle",
+			"DEC_GPole",
+			"RA_GPole",
+			"uvPath",
+			"uwPath",
+			"vwPath",
+			"inputPath",
+			"10",
+			"pi",
+			"RA_inHours",
+			"convertHoursToRad",
+			"mbol",
+			"numberOfWDsInBin",
+			"numberOfBins",
+			"nbinmass",
+			"xf",
+			"xi",
+			"nbinmass",
+			"massOfWD",
+			"xf",
+			"xmasinc",
+			"xmasi",
+			"xi",
+			"mopro",
+			"lb",
+			"carte",
+			"indexdb",
+			"patron",
+			"veltan",
+			"indexdb",
+			"cool",
+			"johnson",
+			"photo",
+			"param",
+			"tms",
+			"cool",
+			"enanas",
+			"tm",
+			"plano",
+			"lb",
+			"mopro",
+			"index",
+			"mad",
+			"paral",
+			"vel",
+			"coorcil",
+			"/tracks/",
+			"common /tracks/",
+			"tracks",
+			"newone2",
+			"newone",
+			"colorsone",
+			"fredone2",
+			"fredone",
+			"Hbjcurve",
+			"Hgcurve",
+			"leb",
+			"dec",
+			"arec",
+			"rightAscen",
+			"arec",
+			"20",
+			"mu",
+			"cont",
+			"zmedia",
+			"xya",
+			"\t",
+			"9826",
+			"( ",
+			"$+$",
+			"$-$",
+			"&",
+			" &",
+			" & ",
+			"^[\\s]*?[\\n\\r]+",
+			"\\tablebreak",
+			"&He&",
+			"\\\\",
+			") ",
+			"( ",
+			"$-$",
+			"&",
+			" &",
+			" & ",
+			"^[\\s]*?[\\n\\r]+",
+			"\\tablebreak",
+			"      ",
+			"^[\\s]*?[\\n\\r]+",
+			"\\\\",
+			" &",
+			" & ",
+			"& 0",
+			"$-$",
+			"^[\\s]",
+			"\\tablebreak",
+			"$+$",
+			"\\\\",
+			"100",
+			"irdr",
+			"massSequence",
+			"tprewdda",
+			"massOfWD",
+			"ntrk",
+			"luminosity",
+			"gtrk",
+			"tefftrk",
+			"nrow",
+			"ttrk",
+			"irdr",
+			"ncol",
+			"tprewd",
+			"mtrk",
+			"param",
+			"ntrk",
+			"luminosity",
+			"gtrk",
+			"tefftrk",
+			"ttrk",
+			"irdr",
+			"nrow"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"dec",
+			"ra",
+			"r",
+			"AUX_ANGLE",
+			"DEC_GPOLE",
+			"RA_GPOLE",
+			"UV_PATH",
+			"UW_PATH",
+			"VW_PATH",
+			"INPUT_PATH",
+			"PI",
+			"luminosity",
+			"declination",
+			"rightAscension",
+			"rightAscen",
+			"properMotion",
+			"   ",
+			"(",
+			"+",
+			"-",
+			" ",
+			"  ",
+			"",
+			"&He &",
+			"",
+			")",
+			"(",
+			"-",
+			"  ",
+			"",
+			"NULL",
+			"0",
+			"-",
+			"",
+			"+",
+			"",
+			"table%initLink",
+			"table%mass",
+			"table%prevTime",
+			"table%mass",
+			"table%ntrk",
+			"table%luminosity",
+			"table%gravAcc",
+			"table%effTemp",
+			"table%nrow",
+			"table%coolingTime",
+			"table%initLink",
+			"table%ncol",
+			"table%prevTime",
+			"table%mass",
+			"table%flag",
+			"table%ntrk",
+			"table%luminosity",
+			"table%gravAcc",
+			"table%effTemp",
+			"table%coolingTime",
+			"table%initLink",
+			"table%nrow",
+			"table%ncol",
+			"table%prevTime",
+			"table%mass",
+			"table%flag",
+			"table(70)%ntrk",
+			"table(77)%ntrk",
+			"table(50)%gravAcc",
+			"table(41)%gravAcc",
+			"table(34)%gravAcc",
+			"table(50)%effTemp",
+			"ttable(41)%effTemp",
+			"ttable(34)%effTemp",
+			"ttable(50)%effTemp",
+			"ttable(41)%effTemp",
+			"ttable(34)%effTemp",
+			"table(50)%luminosity",
+			"table(41)%luminosity",
+			"table(34)%luminosity",
+			"table(50)%prevTime",
+			"table(41)%prevTime",
+			"table(34)%prevTime",
+			"table(50)%coolingTime",
+			"table(41)%coolingTime",
+			"table(34)%coolingTime",
+			"table(50)%mass",
+			"table(41)%mass",
+			"table(34)%mass",
+			"table(50)%ntrk",
+			"table(41)%ntrk",
+			"table(34)%ntrk",
+			"table(50)%ntrk",
+			"table(41)%ntrk",
+			"table(34)%ntrk",
+			"table(26)%gravAcc",
+			"table(18)%gravAcc",
+			"table(8)%gravAcc",
+			"table(1)%gravAcc",
+			"table(26)%effTemp",
+			"table(18)%effTemp",
+			"table(8)%effTemp",
+			"table(1)%effTemp",
+			"table(26)%prevTime",
+			"table(18)%prevTime",
+			"table(8)%prevTime",
+			"table(1)%prevTime",
+			"table(26)%coolingTime",
+			"table(18)%coolingTime",
+			"table(8)%coolingTime",
+			"table(8)%mass",
+			"table(26)%mass",
+			"table(18)%mass",
+			"table(8)%mass",
+			"table(26)%ncol",
+			"table(18)%ncol",
+			"table(8)%ncol",
+			"table(1)%ncol",
+			"table(26)%ncol",
+			"table(18)%ncol",
+			"table(8)%ncol"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/home/gemma/Documents/program/additional_programs/kinematics/kinematics.sublime-project",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 45,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 215.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/velocities.sublime-build",
+	"project": "kinematics.sublime-project",
+	"replace":
+	{
+		"height": 38.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/program/additional_programs/vel/vel.sublime-workspace"
+			]
+		],
+		"width": 605.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 215.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
