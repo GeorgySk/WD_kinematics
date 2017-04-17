@@ -1,3 +1,4 @@
+FOLDER=.
 SRC=./modules
 TMP=./temp
 OUTPUTS=./outputs
@@ -25,16 +26,11 @@ done
 gfortran -I$TMP -c main.f90 -o $TMP/main.o
 
 # Collecting all compiled files together
-gfortran -o $TMP/main.exe $TMP/main.o $modules 
-
-ln -s $OUTPUTS/vw.dat fort.11
-ln -s $OUTPUTS/uw.dat fort.12
-ln -s $OUTPUTS/uv.dat fort.13
+gfortran -o main.exe $TMP/main.o $modules 
  
-time $TMP/main.exe
+# Test execution
+time $FOLDER/main.exe -o
 
-rm fort.* # Deleting fortran link files
-rm $TMP/main.exe
 rm $TMP/*.o # Deleting compiled module files
 
 # Sometimes .mod files can be generated automatically in the same 
