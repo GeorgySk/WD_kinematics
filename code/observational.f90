@@ -5,7 +5,8 @@ module observational
                      getNewUnit
     use commons, only: VW_PATH, &
                        UW_PATH, &
-                       UV_PATH 
+                       UV_PATH, &
+                       OUTPUT_FORMAT 
     use astronomy, only: convertHoursToRad, &
                          convertDegreesToRad, &
                          convertEquatorToGalact, &
@@ -26,7 +27,6 @@ module observational
                VEL_RAD, &
                fillRotationMatrix, &
                CLOUD_FORMAT, &
-               OUTPUT_FORMAT, &
                MBOL_AVG_FORMAT
         character(len = *), parameter :: OBSERV_PATH = './inputs&
                                                         &/observational.dat'
@@ -42,7 +42,6 @@ module observational
                                                 / MBOL_INC)
         real*8, parameter :: VEL_RAD = 0.d0  ! Radial velocity 
         character(len = *), parameter :: CLOUD_FORMAT = '(4(f12.6,3x))' 
-        character(len = *), parameter :: OUTPUT_FORMAT = '(2(f12.6,3x))'
         character(len = *), parameter :: MBOL_AVG_FORMAT = '(7(f12.6,3x))'
 
 
@@ -287,6 +286,8 @@ contains
         
         write(6,*) 'Average relative to Sun:', vel_avg
         write(6,*) 'Sigmas:                 ', sigma
+
+        deallocate(velocityArray)
 
     end subroutine
     !---------------------------------------------------------------------------

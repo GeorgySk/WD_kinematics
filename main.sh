@@ -39,9 +39,12 @@ rm $TMP/*.o # Deleting compiled module files
 
 # Sometimes .mod files can be generated automatically in the same 
 # folder with modules. In order to keep workplace clean we delete them.
-for file in $SRC/*.mod $SRC/dependants/*.mod $CODE/*.mod
-# rm $SRC/*.mod
-# rm $SRC/dependants/*.mod
-# rm $CODE/*.mod
-	rm file
+# Loop is needed in order to avoid errors in case of absence of files
+for file in $SRC/* $SRC/dependants/* $CODE/*; do
+	filename=${file##*/}  # Getting 'myModule.f90' string
+	extension="${filename##*.}"  # Getting 'myModule' string
+	if [ "$extension" = "mod" ]
+	then
+		rm $file
+	fi
 done
