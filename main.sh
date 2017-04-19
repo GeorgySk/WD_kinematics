@@ -4,6 +4,10 @@ TMP=./temp
 OUTPUTS=./outputs
 CODE=./code
 
+# NOTE: For some reason if I have my old .mod files from different
+# compiler, I will get errors saying that they are from different 
+# version. So this next command doesn't work? I should fix it, if not - 
+# I have to clean temp folder by my own.
 # Deleting old mod files in temp folder
 rm $TMP/*.mod
 

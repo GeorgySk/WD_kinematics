@@ -12,11 +12,12 @@ module commons
         character(len = *), parameter :: VW_PATH = './outputs/vw.dat'
         character(len = *), parameter :: UW_PATH = './outputs/uw.dat'
         character(len = *), parameter :: UV_PATH = './outputs/uv.dat'
-        character(len = *), parameter :: INPUT_PATH = '/home/gemma&
-        											  &/Documents/program&
-        											  &/WD_population_40pc&
-        											  &/output_data&
-                                              		  &/boot_rowell_thin_1.out'
+        ! TODO: Make a reference for the next path
+        character(len = *), parameter :: INPUT_PATH = '/home/georgy&
+        											                        &/Documents/program&
+        											                        &/WD_population_40pc&
+        											                        &/output_data&
+                                              		    &/boot_rowell_thin_1.out'
         character(len = *), parameter :: OUTPUT_FORMAT = '(2(f12.6,3x))'
 
 
