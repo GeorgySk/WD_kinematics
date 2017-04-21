@@ -34,7 +34,7 @@ gfortran -I$TMP -c main.f90 -o $TMP/main.o -Wall -Wextra -Wconversion -fbounds-c
 gfortran -o main.exe $TMP/main.o $modules 
  
 # Test execution
-time $FOLDER/main.exe -o -l
+time $FOLDER/main.exe -s -l
 
 rm $TMP/*.o # Deleting compiled module files
 
