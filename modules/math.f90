@@ -1,5 +1,6 @@
 module math
 
+    use, intrinsic :: iso_fortran_env
 
     implicit none
 
@@ -9,10 +10,13 @@ module math
     end interface calculateStandartDeviation
 
     public :: PI, &
+              NAN_64, &
               multiplyMatrixByVector, &
               calculateStandartDeviation
 
     real*8, parameter :: PI = 4.d0 * datan(1.0d0)
+    ! TODO: add test as for different PCs NaN code can be different
+    real*8, parameter :: NAN_64 = transfer(-2251799813685248_int64, 1._real64)
 
 
 contains

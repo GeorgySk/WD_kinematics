@@ -1,15 +1,21 @@
 module astronomy
 
-    use math, only: PI
+    use, intrinsic :: iso_fortran_env
+    use math, only: PI, &
+                    multiplyMatrixByVector
     implicit none
 
-    private :: RA_GPOLE, DEC_GPOLE, AUX_ANGLE
+    private :: RA_GPOLE, &
+               DEC_GPOLE, &
+               AUX_ANGLE, &
+               fillRotationMatrix
         ! Right ascension of Galactic pole
         real*8, parameter :: RA_GPOLE = 192.859508d0 * PI / 180.d0 
         ! Declination of Galactic pole
         real*8, parameter :: DEC_GPOLE = 27.128336d0 * PI /180.d0 
         ! Auxiliary angle
         real*8, parameter :: AUX_ANGLE = 122.932d0 * PI / 180.d0 
+    
     public :: CTK, &
               TRAN_MATR, &
               convertGalacticToXYZ, &
@@ -80,5 +86,58 @@ contains
             l = l - 2.d0*PI
         end if
     end subroutine
+
+
+    subroutine convertEquatorMotionToUVW(rightAscension, &
+                                         declination, &
+                                         distance, &
+                                         motionInDEC, &
+                                         motionInRA, &
+                                         vel_hel)
+        real*8, intent(in) :: rightAscension, &
+                              declination, &
+                              distance, &
+                              motionInDEC, &
+                              motionInRA
+        real*8, dimension(3), intent(out) :: vel_hel
+        real(real64), parameter :: VEL_RAD = 0.d0
+        real(real64) :: motionInRAAster
+        real(real64), dimension(3) :: vel_motion = (/VEL_RAD, 0.d0, 0.d0/)
+        real*8, dimension(3, 3) :: rotationMatrix
+
+        ! Motion in right ascension with asterisk
+        motionInRAAster = motionInRA * dcos(declination)          
+        
+        vel_motion(2) = CTK * motionInRAAster * distance              
+        vel_motion(3) = CTK * motionInDEC * distance
+        
+        call fillRotationMatrix(rightAscension, declination, rotationMatrix)         
+        
+        ! U,V,W         
+        vel_hel = multiplyMatrixByVector(TRAN_MATR, &
+                        multiplyMatrixByVector(rotationMatrix,&
+                                                       vel_motion))
+    end subroutine convertEquatorMotionToUVW
+
+
+    subroutine fillRotationMatrix(RA, DEC, A)
+
+        real*8, intent(in) :: RA, &
+                              DEC
+        real*8, dimension(3, 3), intent(out) :: A
+        A(1,1) = dcos(RA) * dcos(DEC)  
+        A(2,1) = dsin(RA) * dcos(DEC)  
+        A(3,1) = dsin(DEC)        
+
+        A(1,2) = - dsin(RA)
+        A(2,2) = dcos(RA)
+        A(3,2) = 0.d0
+
+        A(1,3) = - dcos(RA)*dsin(DEC)
+        A(2,3) = - dsin(RA)*dsin(DEC)
+        A(3,3) = dcos(DEC)
+
+    end subroutine
+
 
 end module
