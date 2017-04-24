@@ -4,24 +4,72 @@
 		"selected_items":
 		[
 			[
+				"in",
+				"inputData"
+			],
+			[
+				"Num",
+				"numberOfWDs"
+			],
+			[
+				"inte",
+				"integer"
+			],
+			[
+				"num",
+				"numberOfWDs"
+			],
+			[
+				"motio",
+				"motionInRA"
+			],
+			[
+				"moti",
+				"motionInRA"
+			],
+			[
+				"mot",
+				"motionInRA"
+			],
+			[
+				"dec",
+				"declination"
+			],
+			[
+				"ve",
+				"vel_sum"
+			],
+			[
+				"nu",
+				"numberOfWDs"
+			],
+			[
+				"wri",
+				"writeDataForMbolBins"
+			],
+			[
+				"int",
+				"intent"
+			],
+			[
 				"fill",
-				"fillFullDataForUVWPlot"
+				"fillSelectedDataForMbolBins"
 			],
 			[
-				"magnit",
-				"magnitudeArray"
+				"highest",
+				"highestCoordValue"
 			],
 			[
-				"su",
-				"sub\tsubroutine"
+				"n",
+				"num_bins"
 			],
 			[
-				"vel",
-				"vel_hel"
+				"pro",
+				"procedure"
 			],
 			[
-				"rea",
-				"real"
+				"mod",
+				"module"
 			],
 			[
 				"motion",
@@ -32,10 +80,6 @@
 				"sub\tsubroutine"
 			],
 			[
-				"ve",
-				"velocityArray"
-			],
-			[
 				"impl",
 				"implicit"
 			],
@@ -44,8 +88,8 @@
 				"real64"
 			],
 			[
-				"int",
-				"int_calculateSigma"
+				"su",
+				"subroutine"
 			],
 			[
 				"d",
@@ -54,6 +98,10 @@
 			[
 				"pr",
 				"print"
+			],
+			[
+				"vel",
+				"vel_sum"
 			],
 			[
 				"appl",
@@ -66,10 +114,6 @@
 			[
 				"veloc",
 				"velocityArray"
-			],
-			[
-				"inte",
-				"intent"
 			],
 			[
 				"cou",
@@ -212,10 +256,6 @@
 				"linear_algebra"
 			],
 			[
-				"num",
-				"numberOfWDsInBin"
-			],
-			[
 				"subr",
 				"subroutine"
 			],
@@ -268,10 +308,6 @@
 				"DA_colors"
 			],
 			[
-				"in",
-				"in"
-			],
-			[
 				"obse",
 				"observational_data"
 			],
@@ -300,20 +336,27 @@
 	"buffers":
 	[
 		{
-			"file": "/home/georgy/Documents/program/additional_programs/kinematics/main.f90",
+			"file": "/home/georgy/Documents/program/additional_programs/kinematics/main.sh",
 			"settings":
 			{
-				"buffer_size": 861,
+				"buffer_size": 1871,
 				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/observational.f90",
+			"file": "/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth/limoges/mbol_cloud_w.dat",
 			"settings":
 			{
-				"buffer_size": 13935,
-				"encoding": "UTF-8",
+				"buffer_size": 34076,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth/limoges/mbol_avg_w.dat",
+			"settings":
+			{
+				"buffer_size": 1032,
 				"line_ending": "Unix"
 			}
 		},
@@ -321,8 +364,16 @@
 			"file": "/home/georgy/Documents/program/additional_programs/kinematics/code/plot_mbol.f90",
 			"settings":
 			{
-				"buffer_size": 10252,
+				"buffer_size": 10644,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/synthetic.f90",
+			"settings":
+			{
+				"buffer_size": 10828,
 				"line_ending": "Unix"
 			}
 		}
@@ -414,7 +465,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 92.0,
+		"height": 392.0,
 		"last_filter": "remove",
 		"selected_items":
 		[
@@ -431,7 +482,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 392.0
+		"width": 467.0
 	},
 	"console":
 	{
@@ -454,27 +505,57 @@
 		"/home/georgy/Documents/program/additional_programs/kinematics",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/dependants",
-		"/home/georgy/Documents/program/additional_programs/kinematics/outputs"
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth/limoges"
 	],
 	"file_history":
 	[
-		"/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/observational.f90",
-		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_uvw.f90",
-		"/home/georgy/Documents/program/additional_programs/kinematics/code/commons.f90",
-		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_mbol.f90",
-		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/uvw.dat",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/synthetic.f90",
-		"/home/georgy/Documents/program/additional_programs/kinematics/main.sh",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth/limoges/mbol_avg_w.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth/limoges/mbol_avg_v.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth/limoges/mbol_avg_u.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/observ/limoges/mbol_avg_u.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/observ/limoges/mbol_avg_v.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/observ/limoges/mbol_avg_w.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/observational.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/commons.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_uvw.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_mbol.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_uvw.mod",
+		"/home/georgy/Documents/program/WD_population_40pc/output_data/boot_rowell_thin_1.out",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/mbol_cloud_u.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/criterion.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/main.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/modules/math.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/sublime_files/kinematics.sublime-project",
+		"/home/georgy/Documents/program/additional_programs/kinematics/logs/log.out",
+		"/home/georgy/Documents/program/additional_programs/kinematics/modules/dependants/astronomy.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/logs\nlogs/log.out",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/terminal_calls.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/plot_mbol.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/plot_uvw.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/synthetic.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/observational.f90",
-		"/home/georgy/Documents/program/additional_programs/kinematics/modules/dependants/astronomy.f90",
-		"/home/georgy/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/georgy/Documents/program/additional_programs/kinematics/main.sh",
+		"/home/georgy/Documents/program/additional_programs/kinematics/temp/mbol_plot.mod",
+		"/home/georgy/Documents/program/additional_programs/kinematics/temp/zaebal.mod",
+		"/home/georgy/Documents/program/additional_programs/kinematics/temp/plot_uvw_vs_mbol.mod",
+		"/home/georgy/Documents/program/additional_programs/kinematics/temp/plot_mbol.mod",
+		"/home/georgy/Documents/program/additional_programs/kinematics/temp/plot_uvw.mod",
+		"/home/georgy/Documents/program/additional_programs/kinematics/temp/plot_uvw_vs_uvw.mod",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_uvw_vs_mbol.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_uvw_vs_uvw.f90",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/mbol_avg_v.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/mbol_avg_w.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/mbol_avg_u.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/mbol_cloud_w.dat",
+		"/home/georgy/Documents/program/additional_programs/kinematics/outputs/mbol_cloud_v.dat",
+		"/home/georgy/.config/sublime-text-3/Packages/User/myBuildSystems/kinematics.sublime-build",
 		"/home/georgy/.bashrc",
-		"/home/georgy/Documents/program/additional_programs/kinematics/code/criterion.f90",
-		"/home/georgy/Documents/program/additional_programs/kinematics/modules/math.f90",
-		"/home/georgy/Documents/program/additional_programs/kinematics/code/terminal_calls.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/synthnolimo.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/synthlimo.f90",
+		"/home/georgy/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
 		"/home/georgy/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
 		"/home/gemma/Documents/program/additional_programs/kinematics/code/observational.f90",
 		"/home/gemma/Documents/program/additional_programs/kinematics/code/commons.f90",
@@ -557,22 +638,7 @@
 		"/home/gemma/Documents/WD_population_40pc/code/tables_linking.f",
 		"/home/gemma/Documents/WD_population_40pc/code/math/toSort.f",
 		"/home/gemma/Documents/WD_population_40pc/main.sh",
-		"/home/gemma/Documents/WD_population_40pc/code/math/random_number_generators.f",
-		"/home/gemma/Documents/WD_population_40pc/code/velocities/vrado.f",
-		"/home/gemma/Documents/WD_population_40pc/code/samples/volum_40pc.f",
-		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/interp.f",
-		"/home/gemma/Documents/WD_population_40pc/code/colors/chanco.f",
-		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/ONe/interlumONe.f",
-		"/home/gemma/Documents/WD_population_40pc/code/DA_DB_fraction/dbd_fid.f",
-		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/magi.f",
-		"/home/gemma/Documents/WD_population_40pc/code/coordinates/coor.f",
-		"/home/gemma/Documents/WD_population_40pc/code/trajectories/trajectories.f",
-		"/home/gemma/Documents/WD_population_40pc/code/velocities/velocities.f",
-		"/home/gemma/Documents/WD_population_40pc/code/coordinates/polar.f",
-		"/home/gemma/Documents/WD_population_40pc/code/luminosities/luminosities.f",
-		"/home/gemma/Documents/WD_population_40pc/code/cooling/unknown/incoolea.f",
-		"/home/gemma/Documents/WD_population_40pc/code/star_generation/generator.f",
-		"/home/gemma/Documents/FL40_disk_copy/disk40.b"
+		"/home/gemma/Documents/WD_population_40pc/code/math/random_number_generators.f"
 	],
 	"find":
 	{
@@ -592,22 +658,94 @@
 		"find_history":
 		[
 			"numberOfWDsInBin",
-			"unitCloud",
-			"VW_PATH",
-			"velocityArray",
+			"MBOL_AVG_W_PATH",
+			"unitMbolAvgW",
+			"NUM_OF_BINS",
+			"unitMbolAvgW",
+			"MBOL_CLOUD_U_PATH",
+			"MBOL_CLOUD_V_PATH",
+			"OBSERV_PATH",
+			"INPUT_PATH",
+			"UVW_PATH",
+			"unitUVW",
+			"fillFullDataForUVWPlot",
+			"write",
+			"MBOL_CLOUD_U_PATH",
+			"unitCloudU",
+			"fillSelectedDataForMbolCloud",
+			"write",
+			"unitMbolAvgU",
+			"MBOL_AVG_U_PATH",
+			"unitMbolAvgW",
+			"writeSelectedDataForMbolBins",
+			"unitMbolAvgW",
+			"numberOfWDsInBin_f",
+			"CLOUD_FORMAT",
+			"MBOL_CLOUD_PATH",
+			"INPUT_PATH",
 			"highestCoord",
-			"magnitudeArray",
-			"magnitude",
+			"print",
 			"magnitudeArray",
 			"velocityArrayForMbol",
-			"vel_hel",
+			"velocityArray",
+			"velocityArrayForMbol",
+			"sumOfVelocitiesInBin",
+			"velocityArrayForMbol",
 			"sumOfVelocitiesInBin",
 			"numberOfWDsInBin",
-			"binNumber",
-			"fillRotationMatrix",
-			"vel_hel",
-			"rotationMatrix",
-			"rightAscension",
+			"velocityArray",
+			"counterOfWD",
+			"99",
+			"convertEquatorMotionToUVW",
+			"motionInDEC",
+			"convertEquatorMotionToUVW",
+			"velocityArrayForMbol",
+			"counterOfWD",
+			"velocityArray",
+			"counterOfWD",
+			"velocityArray",
+			"MBOL_AVG_FORMAT",
+			"CLOUD_FORMAT",
+			"NUM_OF_BINS",
+			"MBOL_MIN",
+			"VEL_RAD",
+			"UVW_PATH",
+			"fillFullDataForUVWPlot",
+			"fillSelectedDataForUVWPlot",
+			"calculateStandartDeviation",
+			"multiplyMatrixByVector",
+			"TRAN_MATR",
+			"CTK",
+			"convertEquatorToGalact",
+			"convertHoursToRad",
+			"mbol_plot",
+			"zaebal",
+			"plot_uvw",
+			"plot_mbol",
+			"plot_uvw_vs_mbol",
+			"plot_uvw_vs_uvw",
+			"getHighestCoord",
+			"fillMagnitudeBins",
+			"counterOfWD",
+			"unitMbolAvgU",
+			"MBOL_AVG_PATH",
+			"magnitudeArray",
+			"MBOL_AVG_FORMAT",
+			"unitMbolAvg",
+			"sumOfRestsSquared",
+			"averageVelocityInBin",
+			"numberOfWDsInBin",
+			"magnitudeArray",
+			"numberOfWDsInBin",
+			"MBOL_MIN",
+			"MBOL_CLOUD_U_PATH",
+			"unitCloudU",
+			"MBOL_CLOUD_PATH",
+			"unitCloud",
+			"fillDataForUVWPlot",
+			"averageVelocityInBin",
+			"sumOfRestsSquared",
+			"averageVelocityInBin",
 			"motionInDEC",
 			"distance",
 			"vel_motion",
@@ -646,79 +784,7 @@
 			"RA_inHours",
 			"convertHoursToRad",
 			"mbol",
-			"numberOfWDsInBin",
-			"numberOfBins",
-			"nbinmass",
-			"xf",
-			"xi",
-			"nbinmass",
-			"massOfWD",
-			"xf",
-			"xmasinc",
-			"xmasi",
-			"xi",
-			"mopro",
-			"lb",
-			"carte",
-			"indexdb",
-			"patron",
-			"veltan",
-			"indexdb",
-			"cool",
-			"johnson",
-			"photo",
-			"param",
-			"tms",
-			"cool",
-			"enanas",
-			"tm",
-			"plano",
-			"lb",
-			"mopro",
-			"index",
-			"mad",
-			"paral",
-			"vel",
-			"coorcil",
-			"/tracks/",
-			"common /tracks/",
-			"tracks",
-			"newone2",
-			"newone",
-			"colorsone",
-			"fredone2",
-			"fredone",
-			"Hbjcurve",
-			"Hgcurve",
-			"leb",
-			"dec",
-			"arec",
-			"rightAscen",
-			"arec",
-			"20",
-			"mu",
-			"cont",
-			"zmedia",
-			"xya",
-			"\t",
-			"9826",
-			"( ",
-			"$+$",
-			"$-$",
-			"&",
-			" &",
-			" & ",
-			"^[\\s]*?[\\n\\r]+",
-			"\\tablebreak",
-			"&He&",
-			"\\\\",
-			") ",
-			"( ",
-			"$-$",
-			"&",
-			" &",
-			" & ",
-			"^[\\s]*?[\\n\\r]+"
+			"numberOfWDsInBin"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -726,6 +792,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"plot_mbol",
+			"plot_uvw",
+			"zaebal",
+			"mbol_plot",
+			"plot_mbol",
+			"plot_uvw",
 			"highestCoordValue",
 			"limogesCriterionIsUsed",
 			"dec",
@@ -855,99 +927,156 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/georgy/Documents/program/additional_programs/kinematics/main.f90",
+					"file": "/home/georgy/Documents/program/additional_programs/kinematics/main.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 861,
+						"buffer_size": 1871,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								307,
-								307
+								1376,
+								1376
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Fortran/grammars/FortranModern.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 315.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth/limoges/mbol_cloud_w.dat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 34076,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9827,
+								9827
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 5130.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/observational.f90",
+					"buffer": 2,
+					"file": "/home/georgy/Documents/program/additional_programs/kinematics/outputs/synth/limoges/mbol_avg_w.dat",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13935,
+						"buffer_size": 1032,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								13209,
-								13209
+								773,
+								773
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Fortran/grammars/FortranModern.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3114.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "/home/georgy/Documents/program/additional_programs/kinematics/code/plot_mbol.f90",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10252,
+						"buffer_size": 10644,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8273,
-								8273
+								3880,
+								3880
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Fortran/grammars/FortranModern.sublime-syntax",
-							"tab_size": 4,
+							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax",
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2452.0,
+						"translation.y": 900.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/synthetic.f90",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10828,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8001,
+								8001
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2128.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
 				}
+			]
+		},
+		{
+			"sheets":
+			[
 			]
 		}
 	],
@@ -968,11 +1097,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -984,17 +1120,13 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 116.0
+		"height": 203.0
 	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"output.unsaved_changes":
-	{
-		"height": 88.0
-	},
-	"pinned_build_system": "Packages/User/kinematics.sublime-build",
+	"pinned_build_system": "Packages/User/myBuildSystems/kinematics.sublime-build",
 	"project": "kinematics.sublime-project",
 	"replace":
 	{
@@ -1018,7 +1150,7 @@
 		[
 			[
 				"",
-				"~/Documents/program/additional_programs/vel/vel.sublime-workspace"
+				"~/Documents/program/tests/velocity/test.sublime-project"
 			]
 		],
 		"width": 605.0
@@ -1040,7 +1172,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 201.0,
+	"side_bar_width": 215.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

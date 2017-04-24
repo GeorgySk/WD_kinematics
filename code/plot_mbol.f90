@@ -45,7 +45,7 @@ contains
                 write(unitCloudW, CLOUD_FORMAT) magnitude, vel_hel(3)
             case("y")
                 write(unitCloudU, CLOUD_FORMAT) magnitude, vel_hel(1)
-                write(unitCloudV, CLOUD_FORMAT) magnitude, vel_hel(2)
+                write(unitCloudW, CLOUD_FORMAT) magnitude, vel_hel(3)
             case("z")
                 write(unitCloudU, CLOUD_FORMAT) magnitude, vel_hel(1)
                 write(unitCloudV, CLOUD_FORMAT) magnitude, vel_hel(2)
@@ -153,38 +153,48 @@ contains
         do binNumber = 1, NUM_OF_BINS
             
             plots: do j =1, 3
-                !NOTE: If there are no WDs in bin then it will be zero
-                averageVelocityInBin(j) = sumOfVelocitiesInBin(j, binNumber) &
-                                       / dfloat(numberOfWDsInBin(j, binNumber))
                 
-                do i = 1, numberOfWDsInBin(j, binNumber)
-                    sumOfRestsSquared(j) = sumOfRestsSquared(j) &
-                                     + (velocityArrayForMbol(j, binNumber, i) &
-                                     - averageVelocityInBin(j)) ** 2
-                end do
-
-                if (numberOfWDsInBin(j, binNumber) .ne. 1) then
-                    magnitudeSigma(j, binNumber) &
-                        = (sumOfRestsSquared(j) &
-                            / dfloat(numberOfWDsInBin(j, binNumber)) &
-                           - 1.d0) ** 0.5d0
-                else
-                    magnitudeSigma(j, binNumber) = 100.d0
+                if (numberOfWDsInBin(j, binNumber) .gt. 0) then
+            
+                    averageVelocityInBin(j) = sumOfVelocitiesInBin(j, binNumber) &
+                                           / dfloat(numberOfWDsInBin(j, binNumber))
+                    
+                    do i = 1, numberOfWDsInBin(j, binNumber)
+                        sumOfRestsSquared(j) = sumOfRestsSquared(j) &
+                                         + (velocityArrayForMbol(j, binNumber, i) &
+                                         - averageVelocityInBin(j)) ** 2
+                    end do
+    
+                    if (numberOfWDsInBin(j, binNumber) .ne. 1) then
+                        magnitudeSigma(j, binNumber) &
+                            = (sumOfRestsSquared(j) &
+                                / dfloat(numberOfWDsInBin(j, binNumber)) &
+                               - 1.d0) ** 0.5d0
+                    else
+                        magnitudeSigma(j, binNumber) = 100.d0
+                    end if
+    
                 end if
             end do plots
 
-            write(unitMbolAvgU, MBOL_AVG_FORMAT) &
-                MBOL_MIN + MBOL_INC*(dfloat(binNumber) - 0.5d0), &
-                averageVelocityInBin(1), &
-                magnitudeSigma(1, binNumber)
-            write(unitMbolAvgV, MBOL_AVG_FORMAT) &
-                MBOL_MIN + MBOL_INC*(dfloat(binNumber) - 0.5d0), &
-                averageVelocityInBin(2), &
-                magnitudeSigma(2, binNumber)
-            write(unitMbolAvgW, MBOL_AVG_FORMAT) &
-                MBOL_MIN + MBOL_INC*(dfloat(binNumber) - 0.5d0), &
-                averageVelocityInBin(3), &
-                magnitudeSigma(3, binNumber)
+            if (numberOfWDsInBin(1, binNumber) .gt. 0) then
+                write(unitMbolAvgU, MBOL_AVG_FORMAT) &
+                    MBOL_MIN + MBOL_INC*(dfloat(binNumber) - 0.5d0), &
+                    averageVelocityInBin(1), &
+                    magnitudeSigma(1, binNumber)
+            end if
+            if (numberOfWDsInBin(2, binNumber) .gt. 0) then
+                write(unitMbolAvgV, MBOL_AVG_FORMAT) &
+                    MBOL_MIN + MBOL_INC*(dfloat(binNumber) - 0.5d0), &
+                    averageVelocityInBin(2), &
+                    magnitudeSigma(2, binNumber)
+            end if
+            if (numberOfWDsInBin(3, binNumber) .gt. 0) then
+                write(unitMbolAvgW, MBOL_AVG_FORMAT) &
+                    MBOL_MIN + MBOL_INC*(dfloat(binNumber) - 0.5d0), &
+                    averageVelocityInBin(3), &
+                    magnitudeSigma(3, binNumber)
+            end if
 
             sumOfRestsSquared = 0
 
