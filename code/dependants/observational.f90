@@ -1,12 +1,10 @@
 ! This module treats observational data
 module observational   
 
-
+    use derived_types, only: Star
     use, intrinsic :: iso_fortran_env
     use files, only: getNumberOfLines, &
                      getNewUnit
-    ! TODO: hide this in plot modules
-    use commons, only: OUTPUT_FORMAT
     use astronomy, only: convertHoursToRad, &
                          convertDegreesToRad, &
                          convertEquatorToGalact, &
@@ -23,8 +21,7 @@ module observational
 
     implicit none
 
-    private :: OBSERV_PATH, &
-               MBOL_CLOUD_PATH, &
+    private :: MBOL_CLOUD_PATH, &
                MBOL_AVG_PATH, &
                ! TODO: hide this in plot_mbol
                MBOL_MIN, &
@@ -32,8 +29,6 @@ module observational
                MBOL_INC, &
                NUM_OF_BINS, &
                CLOUD_FORMAT
-        character(len = *), parameter :: OBSERV_PATH = './inputs&
-                                                        &/observational.dat'
         character(len = *), parameter :: MBOL_CLOUD_PATH = './outputs&
         												    &/observ&
         												    &/no_crit&
@@ -85,6 +80,13 @@ contains
 
         logical, intent(in) :: limogesCriterionIsUsed
         integer :: numberOfWDs
+        type(Star), dimension(:), allocatable :: whiteDwarfs
+        integer :: unitInput
+        character(len=*), parameter :: INPUT_PATH = './inputs&
+                                                     &/observational.dat'
+        character(len = 11), dimension(:), allocatable :: RA_inHours, &
+                                                          DEC_inDegrees
+
         ! In this array we record velocity components for each WD
         ! in order to calculate standart deviation 
         ! TODO: hide it in plots
@@ -114,8 +116,6 @@ contains
                   motionInDEC, &  ! Motion in Declination (DEC)
                   magnitude
         ! Input data in special formats to be converted
-        character(len = 11) RA_inHours, &
-                            DEC_inDegrees
         ! Data to be obtained from RA_inHours and DEC_inDegrees         
         real*8 :: rightAscension, &
                   declination
@@ -140,19 +140,38 @@ contains
         character(len = *), parameter :: UW_PATH = './outputs/observ/limoges/uw.dat'
         character(len = *), parameter :: UV_PATH = './outputs/observ/limoges/uv.dat'
 
-        print*, "Observational data from Limoges et al. 2015"
+        numberOfWDs = getNumberOfLines(INPUT_PATH)
+        
+        allocate(whiteDwarfs(numberOfWDs))
+        allocate(RA_inHours(numberOfWDs))
+        allocate(DEC_inDegrees(numberOfWDs))
 
-        numberOfWDs = getNumberOfLines(OBSERV_PATH)
+        print*, "Observational data from Limoges et al. 2015"
         print*, "Number of White Dwarfs:", numberOfWDs
+
+        open(getNewUnit(unitInput), file = INPUT_PATH, status='old')
+        
+        do i = 1, numberOfWDs
+            read(unitInput, *) whiteDwarfs(i)%distance, &
+                               RA_inHours(i), &
+                               DEC_inDegrees(i), &
+                               whiteDwarfs(i)%motionInRA, &
+                               whiteDwarfs(i)%motionInDEC, &
+                               whiteDwarfs(i)%magnitude
+        end do
+
+        whiteDwarfs(:)%rightAscension = convertHoursToRad(RA_inHours(:))
+        whiteDwarfs(:)%declination = convertDegreesToRad(DEC_inDegrees(:))
+
+        call whiteDwarfs(:)%equatToGalact
+
         allocate(velocityArray(3, numberOfWDs))
         allocate(velocityArrayForMbol(3, NUM_OF_BINS, numberOfWDs))
-        
-        open(99, file="/home/georgy/Documents/program/additional_programs&
-                      &/kinematics/logs/log.out", status="old")
+
         open(getNewUnit(unitVW), file = VW_PATH, status='old')
         open(getNewUnit(unitUW), file = UW_PATH, status='old')
         open(getNewUnit(unitUV), file = UV_PATH, status='old')
-        open(getNewUnit(unitObs), file = OBSERV_PATH, status='old')
+        open(getNewUnit(unitObs), file = INPUT_PATH, status='old')
         open(getNewUnit(unitCloud), file = MBOL_CLOUD_PATH, status='old')
         open(getNewUnit(unitMbolAvg), file = MBOL_AVG_PATH, status='old')
         open(getNewUnit(unitCloudU), file = MBOL_CLOUD_U_PATH, status='old')

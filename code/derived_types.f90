@@ -1,0 +1,68 @@
+module derived_types
+    use, intrinsic :: iso_fortran_env, dp=>real64
+    use math, only: PI
+    use astronomy, only: convertEquatorToGalact, &
+                         convertGalacticToXYZ, &
+                         convertEquatorMotionToUVW
+    implicit none
+    public :: Star
+
+    type Star
+        real(dp) :: distance, &
+                    rightAscension, &
+                    declination, &
+                    motionInRA, &
+                    motionInDEC, &
+                    magnitude, &
+                    lattitude, &
+                    longitude
+        real(dp), dimension(3) :: coords, &
+                                  vel
+
+    contains
+        procedure :: equatToGalact => star_equatToGalact
+        procedure :: galactToXYZ => star_galactToXYZ
+        procedure :: equatToUVW => star_equatToUVW
+    end type
+
+contains
+
+    subroutine star_equatToGalact(this)
+        class (Star), intent(inout) :: this
+
+        if ((abs(this%rightAscension) > 2.0_dp*PI) .or. &
+            (abs(this%declination) > 2.0_dp*PI)) stop "Error: wrong angle &
+            &input in star_equatToGalact"
+
+        call convertEquatorToGalact(this%rightAscension, &
+                                    this%declination, &
+                                    this%longitude, &
+                                    this%lattitude)
+    end subroutine star_equatToGalact
+    
+
+    subroutine star_galactToXYZ(this)
+        class(Star), intent(inout) :: this
+
+        if ((abs(this%longitude) > 2.0_dp*PI) .or. &
+            (abs(this%lattitude) > 2.0_dp*PI)) stop "Error: wrong angle &
+            &input in star_galactToXYZ"
+
+        this%coords = convertGalacticToXYZ(this%distance, &
+                                           this%longitude, &
+                                           this%lattitude) 
+    end subroutine star_galactToXYZ
+
+
+    subroutine star_equatToUVW(this)
+        class(Star), intent(inout) :: this
+
+        call convertEquatorMotionToUVW(this%rightAscension, &
+                                       this%declination, &
+                                       this%distance, &
+                                       this%motionInDEC, &
+                                       this%motionInRA, &
+                                       this%vel)
+    end subroutine star_equatToUVW
+
+end module derived_types
