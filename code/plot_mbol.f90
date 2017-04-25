@@ -1,27 +1,106 @@
 module plot_mbol
 
-
+    use derived_types, only: Star
     use commons, only: OUTPUT_FORMAT
+    use files, only: getNewUnit
 
     implicit none
-
-    public :: fillSelectedDataForMbolCloud, &
-              fillSelectedDataForMbolBins, &
-              fillFullDataForMbolBins, &
-              writeSelectedDataForMbolBins
+    ! Following samples are used when plots use different data
+    type (Star), dimension(:), allocatable, save :: sampleUvsMbol, &
+                                                    sampleVvsMbol, &
+                                                    sampleWvsMbol
+    real*8, parameter :: MBOL_MIN = 5.75d0                                      
+    real*8, parameter :: MBOL_MAX = 20.75d0
+    real*8, parameter :: MBOL_INC = 0.5d0
+    integer, parameter :: NUM_OF_BINS = int((MBOL_MAX - MBOL_MIN) &
+                                            / MBOL_INC)
+    character(len = *), parameter :: CLOUD_FORMAT = '(2(f12.6,3x))'
+    character(len = *), parameter :: MBOL_CLOUD_U_PATH = './outputs&
+                                                          &/observ&
+                                                          &/limoges&
+                                                          &/mbol_cloud_u.dat'
+    character(len = *), parameter :: MBOL_CLOUD_V_PATH = './outputs&
+                                                          &/observ&
+                                                          &/limoges&
+                                                          &/mbol_cloud_v.dat'
+    character(len = *), parameter :: MBOL_CLOUD_W_PATH = './outputs&
+                                                          &/observ&
+                                                          &/limoges&
+                                                          &/mbol_cloud_w.dat'
 
     private :: MBOL_MIN, &
                MBOL_MAX, &
                MBOL_INC, &
-               NUM_OF_BINS
-        real*8, parameter :: MBOL_MIN = 5.75d0                                      
-        real*8, parameter :: MBOL_MAX = 20.75d0
-        real*8, parameter :: MBOL_INC = 0.5d0
-        integer, parameter :: NUM_OF_BINS = int((MBOL_MAX - MBOL_MIN) &
-                                                / MBOL_INC)
+               NUM_OF_BINS, &
+               CLOUD_FORMAT, &
+               MBOL_CLOUD_U_PATH, &
+               MBOL_CLOUD_V_PATH, &
+               MBOL_CLOUD_W_PATH
+
+    public :: fillSelectedDataForMbolCloud, &
+              fillSelectedDataForMbolBins, &
+              fillFullDataForMbolBins, &
+              writeSelectedDataForMbolBins, &
+              sampleUvsMbol, &
+              sampleVvsMbol, &
+              sampleWvsMbol
 
 contains
 
+    subroutine plotUVWvsMbol()
+        integer :: i, j
+        integer :: unitCloudU, &
+                   unitCloudV, &
+                   unitCloudW
+        integer :: binNumber
+        integer, dimension(NUM_OF_BINS) :: wdInBinCounter = 0
+        type (Star), dimension(:), allocatable :: binSample
+        integer :: counter = 1
+
+        if (allocated(sampleUvsMbol) .and. allocated(sampleVvsMbol) &
+                                     .and. allocated(sampleWvsMbol)) then
+            ! Filing cloud files
+            open(getNewUnit(unitCloudU), file = MBOL_CLOUD_U_PATH, status='old')
+            do i = 1, size(sampleUvsMbol)
+                write(unitCloudU, CLOUD_FORMAT) sampleUvsMbol(i)%magnitude, &
+                                                sampleUvsMbol(i)%vel(1)
+            end do
+
+            open(getNewUnit(unitCloudV), file = MBOL_CLOUD_V_PATH, status='old')
+            do i = 1, size(sampleVvsMbol)
+                write(unitCloudV, CLOUD_FORMAT) sampleVvsMbol(i)%magnitude, &
+                                                sampleVvsMbol(i)%vel(1)
+            end do
+
+            open(getNewUnit(unitCloudW), file = MBOL_CLOUD_W_PATH, status='old')
+            do i = 1, size(sampleWvsMbol)
+                write(unitCloudW, CLOUD_FORMAT) sampleWvsMbol(i)%magnitude, &
+                                                sampleWvsMbol(i)%vel(1)
+            end do
+
+            ! Filling bin files
+            do i = 1, size(sampleUvsMbol)
+                binNumber = ceiling((sampleUvsMbol(i)%magnitude - MBOL_MIN) &
+                                     / MBOL_INC)
+                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+            end do
+
+            ! NOTE: this way of filling bins is just ridiculous
+            do i = 1, NUM_OF_BINS
+                if (wdInBinCounter(i) > 0) then
+                    allocate(binSample(wdInBinCounter(i)))
+                    do j = 1, size(sampleUvsMbol)
+                        if (ceiling((sampleUvsMbol(j)%magnitude - MBOL_MIN) &
+                                     / MBOL_INC) == i) then
+                            binSample(counter) = sampleUvsMbol(j)
+                            counter = counter + 1
+                        end if
+                    end do
+                end if 
+            end do
+        end if
+        
+    end subroutine plotUVWvsMbol
 
     subroutine fillSelectedDataForMbolCloud(highest, &
                                             magnitude, &

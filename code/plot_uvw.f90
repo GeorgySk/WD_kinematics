@@ -1,68 +1,63 @@
 module plot_uvw
-
-
+    use, intrinsic :: iso_fortran_env, dp=>real64
+    use derived_types, only: Star
     use commons, only: OUTPUT_FORMAT, &
                        UVW_FORMAT
+    use files, only: getNewUnit
 
     implicit none
+    character(len = *), parameter :: VW_PATH = './outputs/observ&
+                                                &/limoges/vw.dat'
+    character(len = *), parameter :: UW_PATH = './outputs/observ&
+                                                &/limoges/uw.dat'
+    character(len = *), parameter :: UV_PATH = './outputs/observ&
+                                                &/limoges/uv.dat'
+    ! Following samples are used when plots use different data
+    type (Star), dimension(:), allocatable, save :: sampleUvsV, &
+                                                    sampleUvsW, &
+                                                    sampleVvsW
 
-    public :: fillSelectedDataForUVWPlot, &
-              fillFullDataForUVWPlot
+    private :: UV_PATH, &
+               UW_PATH, &
+               VW_PATH
 
+    public :: sampleUvsV, &
+              sampleUvsW, &
+              sampleVvsW, &
+              plotUVWvsUVW
 
 contains
 
 
-    subroutine fillSelectedDataForUVWPlot(highest, &
-                                          vel_hel, &
-                                          counter, &
-                                          vel_sum, &
-                                          vel_array, &
-                                          unitVW, &
-                                          unitUW, &
-                                          unitUV)
-        
-        character(len = 1), intent(in) :: highest
-        real*8, dimension(3), intent(in) :: vel_hel
-        integer, dimension(3), intent(inout) :: counter
-        real*8, dimension(3), intent(inout) :: vel_sum
-        real*8, dimension(:, :), intent(inout) :: vel_array
-        ! TODO: hide this somewhere
-        integer, intent(in) :: unitVW, &
-                               unitUW, &
-                               unitUV
-        
-        plot_UV_or_UW: if (highest .ne. "x") then
-            counter(1) = counter(1) + 1  ! U
-            vel_sum(1) = vel_sum(1) + vel_hel(1)
-            vel_array(1, counter(1)) = vel_hel(1)
-        end if plot_UV_or_UW
-        plot_UV_or_VW: if (highest .ne. "y") then
-            counter(2) = counter(2) + 1  ! V
-            vel_sum(2) = vel_sum(2) + vel_hel(2)
-            vel_array(2, counter(2)) = vel_hel(2)
-        end if plot_UV_or_VW
-        plot_UW_or_VW: if (highest .ne. "z") then
-            counter(3) = counter(3) + 1  ! W
-            vel_sum(3) = vel_sum(3) + vel_hel(3)
-            vel_array(3, counter(3)) = vel_hel(3)
-        end if plot_UW_or_VW
+    subroutine plotUVWvsUVW()
+        integer :: i
+        real(dp) :: vel_sum = 0.0_dp
+        integer :: unitUV, &
+                   unitUW, &
+                   unitVW
 
-        select case (highest)
-            case("x")
-                write(unitVW, OUTPUT_FORMAT) vel_hel(2), &
-                                             vel_hel(3)
-            case("y")
-                write(unitUW, OUTPUT_FORMAT) vel_hel(1), &
-                                             vel_hel(3)
-            case("z")
-                write(unitUV, OUTPUT_FORMAT) vel_hel(1), &
-                                             vel_hel(2)
-            case default
-                print*, "Error: couldn't determine highest coordinate"
-        end select
-        
-    end subroutine fillSelectedDataForUVWPlot
+        if (allocated(sampleUvsV) .and. allocated(sampleUvsW) &
+                                  .and. allocated(sampleVvsW)) then
+
+            open(getNewUnit(unitUV), file = UV_PATH, status='old')
+            do i = 1, size(sampleUvsV)
+                write(unitUV, OUTPUT_FORMAT) sampleUvsV(i)%vel(1), &
+                                             sampleUvsV(i)%vel(2)
+            end do 
+
+            open(getNewUnit(unitUW), file = UW_PATH, status='old')
+            do i = 1, size(sampleUvsW)
+                write(unitUW, OUTPUT_FORMAT) sampleUvsW(i)%vel(1), &
+                                             sampleUvsW(i)%vel(2)
+            end do 
+
+            open(getNewUnit(unitVW), file = VW_PATH, status='old')
+            do i = 1, size(sampleVvsW)
+                write(unitVW, OUTPUT_FORMAT) sampleVvsW(i)%vel(1), &
+                                             sampleVvsW(i)%vel(2)
+            end do
+        end if 
+    end subroutine plotUVWvsUVW
 
 
     subroutine fillFullDataForUVWPlot(vel_hel, &

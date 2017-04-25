@@ -18,7 +18,6 @@ module derived_types
                     longitude
         real(dp), dimension(3) :: coords, &
                                   vel
-
     contains
         procedure :: equatToGalact => star_equatToGalact
         procedure :: galactToXYZ => star_galactToXYZ
@@ -27,7 +26,7 @@ module derived_types
 
 contains
 
-    subroutine star_equatToGalact(this)
+    impure elemental subroutine star_equatToGalact(this)
         class (Star), intent(inout) :: this
 
         if ((abs(this%rightAscension) > 2.0_dp*PI) .or. &
@@ -41,7 +40,7 @@ contains
     end subroutine star_equatToGalact
     
 
-    subroutine star_galactToXYZ(this)
+    impure elemental subroutine star_galactToXYZ(this)
         class(Star), intent(inout) :: this
 
         if ((abs(this%longitude) > 2.0_dp*PI) .or. &
@@ -54,7 +53,7 @@ contains
     end subroutine star_galactToXYZ
 
 
-    subroutine star_equatToUVW(this)
+    impure elemental subroutine star_equatToUVW(this)
         class(Star), intent(inout) :: this
 
         call convertEquatorMotionToUVW(this%rightAscension, &

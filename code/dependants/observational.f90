@@ -2,7 +2,7 @@
 module observational   
 
     use derived_types, only: Star
-    use, intrinsic :: iso_fortran_env
+    use, intrinsic :: iso_fortran_env, dp=>real64
     use files, only: getNumberOfLines, &
                      getNewUnit
     use astronomy, only: convertHoursToRad, &
@@ -12,12 +12,16 @@ module observational
                          convertEquatorMotionToUVW
     use math, only: calculateStandartDeviation
     use plot_uvw, only: fillSelectedDataForUVWPlot, &
-                        fillFullDataForUVWPlot
+                        fillFullDataForUVWPlot, &
+                        plotUVWvsUVW
     use plot_mbol, only: fillSelectedDataForMbolCloud, &
                          fillSelectedDataForMbolBins, &
                          fillFullDataForMbolBins, &
                          writeSelectedDataForMbolBins, &
-                         writeFullDataForMbolBins
+                         writeFullDataForMbolBins, &
+                         plotUVWvsMbol
+    use criterion, only: splitDataForUVWvsUVW, &
+                         splitDataForUVWvsMbol
 
     implicit none
 
@@ -134,17 +138,20 @@ contains
         real*8, dimension(3) :: vel_sum = 0.d0
         real*8, dimension(3) :: vel_avg, &
                                 sigma
-        character(len=1) :: highestCoord
+        character(len=1), dimension(:), allocatable :: highestCoord
         character(len = *), parameter :: UVW_PATH = './outputs/observ/no_crit/uvw.dat'
         character(len = *), parameter :: VW_PATH = './outputs/observ/limoges/vw.dat'
         character(len = *), parameter :: UW_PATH = './outputs/observ/limoges/uw.dat'
         character(len = *), parameter :: UV_PATH = './outputs/observ/limoges/uv.dat'
+
+
 
         numberOfWDs = getNumberOfLines(INPUT_PATH)
         
         allocate(whiteDwarfs(numberOfWDs))
         allocate(RA_inHours(numberOfWDs))
         allocate(DEC_inDegrees(numberOfWDs))
+        allocate(highestCoord(numberOfWDs))
 
         print*, "Observational data from Limoges et al. 2015"
         print*, "Number of White Dwarfs:", numberOfWDs
@@ -164,6 +171,20 @@ contains
         whiteDwarfs(:)%declination = convertDegreesToRad(DEC_inDegrees(:))
 
         call whiteDwarfs(:)%equatToGalact
+        call whiteDwarfs(:)%galactToXYZ
+        call whiteDwarfs(:)%equatToUVW
+
+        if (limogesCriterionIsUsed) then
+            call splitDataForUVWvsUVW(whiteDwarfs)
+            call splitDataForUVWvsMbol(whiteDwarfs)
+
+            call plotUVWvsUVW()
+            call plotUVWvsMbol()
+        else 
+
+        end if
+
+
 
         allocate(velocityArray(3, numberOfWDs))
         allocate(velocityArrayForMbol(3, NUM_OF_BINS, numberOfWDs))

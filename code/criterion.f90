@@ -1,70 +1,125 @@
 module criterion
-
-    use, intrinsic :: iso_fortran_env
-
+    use, intrinsic :: iso_fortran_env, dp=>real64
+    use derived_types, only: Star
+    use plot_uvw, only: sampleUvsV, &
+                        sampleUvsW, &
+                        sampleVvsW
+    use plot_mbol, only: sampleUvsMbol, &
+                         sampleVvsMbol, &
+                         sampleWvsMbol
     implicit none
 
-    public :: applyLimogesCriterion
+    private
+
+    public :: splitDataForUVWvsUVW, &
+              splitDataForUVWvsMbol
 
 contains
 
-    subroutine applyLimogesCriterion(coordOfWD, &
-                                     vel_hel, &
-                                     counterOfWD, &
-                                     vel_sum, &
-                                     velocityArray, &
-                                     highestCoord)
-        implicit none
-        real(real64), dimension(3), intent(in) :: coordOfWD
-        real(real64), dimension(3), intent(in) :: vel_hel
-        real(real64), dimension(3), intent(inout) :: vel_sum
-        real(real64), dimension(:,:), intent(inout) :: velocityArray
-        integer, dimension(3), intent(inout) :: counterOfWD
-        character(len=1), intent(out) :: highestCoord
-        real(real64) :: highestCoordValue
+    subroutine splitDataForUVWvsUVW(whiteDwarfs)
+        type (Star), dimension(:), intent(in) :: whiteDwarfs
+        real(dp) :: highestCoordValue
+        integer :: xHighestCounter = 0, &
+                   yHighestCounter = 0, &
+                   zHighestCounter = 0, &
+                   counterUvsV = 1, &
+                   counterUvsW = 1, &
+                   counterVvsW = 1
+        integer :: i
 
-        highestCoordValue = maxval(abs(coordOfWD))
+        ! Calculating number of WDs for each plot
+        do i = 1, size(whiteDwarfs)
+            highestCoordValue = maxval(abs(whiteDwarfs(i)%coords))
+            if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(1))) &
+                .lt. 1.0d-5) then
+                xHighestCounter = xHighestCounter + 1
+            else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(2))) &
+                .lt. 1.0d-5) then
+                yHighestCounter = yHighestCounter + 1
+            else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(3))) &
+                .lt. 1.0d-5) then
+                zHighestCounter = zHighestCounter + 1
+            end if
+        end do
+        
+        allocate(sampleUvsV(zHighestCounter))
+        allocate(sampleUvsW(yHighestCounter))
+        allocate(sampleVvsW(xHighestCounter))
 
-        ! Highest is X
-        if (abs(highestCoordValue - abs(coordOfWD(1))) .lt. 1.0d-5) then
-            counterOfWD(2) = counterOfWD(2) + 1  ! V
-            counterOfWD(3) = counterOfWD(3) + 1  ! W
+        ! Distributing WDs in samples for each plot
+        do i = 1, size(whiteDwarfs)
+            highestCoordValue = maxval(abs(whiteDwarfs(i)%coords))
+            if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(1))) &
+                .lt. 1.0d-5) then
+                sampleVvsW(counterVvsW) = whiteDwarfs(i)
+                counterVvsW = counterVvsW + 1
+            else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(2))) &
+                .lt. 1.0d-5) then
+                sampleUvsW(counterUvsW) = whiteDwarfs(i)
+                counterUvsW = counterUvsW + 1
+            else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(3))) &
+                .lt. 1.0d-5) then
+                sampleUvsV(counterUvsV) = whiteDwarfs(i)
+                counterUvsV = counterUvsV + 1
+            end if
+        end do
+    end subroutine splitDataForUVWvsUVW
 
-            vel_sum(2) = vel_sum(2) + vel_hel(2)
-            vel_sum(3) = vel_sum(3) + vel_hel(3)  
 
-            velocityArray(2, counterOfWD(2)) = vel_hel(2)
-            velocityArray(3, counterOfWD(3)) = vel_hel(3)
+    subroutine splitDataForUVWvsMbol(whiteDwarfs)
+        type (Star), dimension(:), intent(in) :: whiteDwarfs
+        real(dp) :: highestCoordValue
+        integer :: xHighestCounter = 0, &
+                   yHighestCounter = 0, &
+                   zHighestCounter = 0, &
+                   counterUvsMbol = 1, &
+                   counterVvsMbol = 1, &
+                   counterWvsMbol = 1
+        integer :: i
 
-            highestCoord = "x"
-        ! Highest is Y
-        else if (abs( highestCoordValue - abs(coordOfWD(2) )) .lt. 1.0d-5) then
-            counterOfWD(1) = counterOfWD(1) + 1  ! U
-            counterOfWD(3) = counterOfWD(3) + 1  ! W
+        ! Calculating number of WDs for each plot
+        do i = 1, size(whiteDwarfs)
+            highestCoordValue = maxval(abs(whiteDwarfs(i)%coords))
+            if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(1))) &
+                .lt. 1.0d-5) then
+                xHighestCounter = xHighestCounter + 1
+            else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(2))) &
+                .lt. 1.0d-5) then
+                yHighestCounter = yHighestCounter + 1
+            else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(3))) &
+                .lt. 1.0d-5) then
+                zHighestCounter = zHighestCounter + 1
+            end if
+        end do
+        
+        allocate(sampleUvsMbol(yHighestCounter + zHighestCounter))
+        allocate(sampleVvsMbol(xHighestCounter + zHighestCounter))
+        allocate(sampleWvsMbol(xHighestCounter + zHighestCounter))
 
-            vel_sum(1) = vel_sum(1) + vel_hel(1)
-            vel_sum(3) = vel_sum(3) + vel_hel(3)
+        ! Distributing WDs in samples for each plot
+        do i = 1, size(whiteDwarfs)
+            highestCoordValue = maxval(abs(whiteDwarfs(i)%coords))
+            if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(1))) &
+                .lt. 1.0d-5) then
+                sampleVvsMbol(counterVvsMbol) = whiteDwarfs(i)
+                sampleWvsMbol(counterWvsMbol) = whiteDwarfs(i)
+                counterVvsMbol = counterVvsMbol + 1
+                counterWvsMbol = counterWvsMbol + 1
+            else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(2))) &
+                .lt. 1.0d-5) then
+                sampleUvsMbol(counterUvsMbol) = whiteDwarfs(i)
+                sampleWvsMbol(counterWvsMbol) = whiteDwarfs(i)
+                counterUvsMbol = counterUvsMbol + 1
+                counterWvsMbol = counterWvsMbol + 1
+            else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(3))) &
+                .lt. 1.0d-5) then
+                sampleUvsMbol(counterUvsMbol) = whiteDwarfs(i)
+                sampleVvsMbol(counterVvsMbol) = whiteDwarfs(i)
+                counterUvsMbol = counterUvsMbol + 1
+                counterVvsMbol = counterVvsMbol + 1
+            end if
+        end do
+    end subroutine splitDataForUVWvsMbol
 
-            velocityArray(1, counterOfWD(1)) = vel_hel(1)
-            velocityArray(3, counterOfWD(3)) = vel_hel(3)
-
-            highestCoord = "y"
-        ! Highest is Z
-        else if (abs( highestCoordValue - abs(coordOfWD(3) )) .lt. 1.0d-5) then
-            counterOfWD(1) = counterOfWD(1) + 1  ! U
-            counterOfWD(2) = counterOfWD(2) + 1  ! V
-
-            vel_sum(1) = vel_sum(1) + vel_hel(1)
-            vel_sum(2) = vel_sum(2) + vel_hel(2)
-
-            velocityArray(1, counterOfWD(1)) = vel_hel(1)
-            velocityArray(2, counterOfWD(2)) = vel_hel(2)
-
-            highestCoord = "z"
-        else
-            print*, "Error: couldn't determine highest coordinate."
-        end if
-
-    end subroutine applyLimogesCriterion
     
 end module criterion
