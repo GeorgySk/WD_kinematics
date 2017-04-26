@@ -2,7 +2,7 @@
 ! data from population synthesis code and calculates average 
 ! velocities, standart deviation and for observational data - 
 ! characteristics of bolometric magnitudes bins 
-program velocities
+program main
 
     use observational, only: treatObservData
     use synthetic, only: treatSynthData 
@@ -24,4 +24,4 @@ program velocities
     end if
 
 stop
-end program
+end program main

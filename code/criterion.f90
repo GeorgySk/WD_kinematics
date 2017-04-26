@@ -1,12 +1,6 @@
 module criterion
     use, intrinsic :: iso_fortran_env, dp=>real64
     use derived_types, only: Star
-    use plot_uvw, only: sampleUvsV, &
-                        sampleUvsW, &
-                        sampleVvsW
-    use plot_mbol, only: sampleUvsMbol, &
-                         sampleVvsMbol, &
-                         sampleWvsMbol
     implicit none
 
     private
@@ -16,8 +10,14 @@ module criterion
 
 contains
 
-    subroutine splitDataForUVWvsUVW(whiteDwarfs)
+    subroutine splitDataForUVWvsUVW(whiteDwarfs, &
+                                    sampleUvsV, &
+                                    sampleUvsW, &
+                                    sampleVvsW)
         type (Star), dimension(:), intent(in) :: whiteDwarfs
+        type (Star), dimension(:), allocatable, intent(out) :: sampleUvsV
+        type (Star), dimension(:), allocatable, intent(out) :: sampleUvsW
+        type (Star), dimension(:), allocatable, intent(out) :: sampleVvsW
         real(dp) :: highestCoordValue
         integer :: xHighestCounter = 0, &
                    yHighestCounter = 0, &
@@ -66,8 +66,14 @@ contains
     end subroutine splitDataForUVWvsUVW
 
 
-    subroutine splitDataForUVWvsMbol(whiteDwarfs)
+    subroutine splitDataForUVWvsMbol(whiteDwarfs, &
+                                     sampleUvsMbol, &
+                                     sampleVvsMbol, &
+                                     sampleWvsMbol)
         type (Star), dimension(:), intent(in) :: whiteDwarfs
+        type (Star), dimension(:), allocatable, intent(out) :: sampleUvsMbol
+        type (Star), dimension(:), allocatable, intent(out) :: sampleVvsMbol
+        type (Star), dimension(:), allocatable, intent(out) :: sampleWvsMbol
         real(dp) :: highestCoordValue
         integer :: xHighestCounter = 0, &
                    yHighestCounter = 0, &

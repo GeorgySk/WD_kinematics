@@ -5,7 +5,8 @@ module derived_types
                          convertGalacticToXYZ, &
                          convertEquatorMotionToUVW
     implicit none
-    public :: Star
+    public :: Star, &
+              JaggedArray
 
     type Star
         real(dp) :: distance, &
@@ -23,6 +24,10 @@ module derived_types
         procedure :: galactToXYZ => star_galactToXYZ
         procedure :: equatToUVW => star_equatToUVW
     end type
+
+    type JaggedArray
+        type(Star), dimension(:), allocatable :: row
+    end type JaggedArray
 
 contains
 

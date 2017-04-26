@@ -1,4 +1,4 @@
-GFORTRAN module version '9' created from ./modules/dependants/astronomy.f90
+GFORTRAN module version '9' created from /tmp/SublimeLinter3-georgy/astronomy.f90
 MD5:5320d6005d57ae6f6da1d7ad8aebd3d1 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()

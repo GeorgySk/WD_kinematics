@@ -1,37 +1,51 @@
 module plot_uvw
     use, intrinsic :: iso_fortran_env, dp=>real64
     use derived_types, only: Star
-    use commons, only: OUTPUT_FORMAT, &
-                       UVW_FORMAT
     use files, only: getNewUnit
 
     implicit none
+
+    private
+
+    public :: plotUVWvsUVW
+
+    interface plotUVWvsUVW
+            module procedure threeSamples_plotUVWvsUVW
+            module procedure oneSample_plotUVWvsUVW
+    end interface plotUVWvsUVW
+    
     character(len = *), parameter :: VW_PATH = './outputs/observ&
                                                 &/limoges/vw.dat'
     character(len = *), parameter :: UW_PATH = './outputs/observ&
                                                 &/limoges/uw.dat'
     character(len = *), parameter :: UV_PATH = './outputs/observ&
                                                 &/limoges/uv.dat'
-    ! Following samples are used when plots use different data
-    type (Star), dimension(:), allocatable, save :: sampleUvsV, &
-                                                    sampleUvsW, &
-                                                    sampleVvsW
-
-    private :: UV_PATH, &
-               UW_PATH, &
-               VW_PATH
-
-    public :: sampleUvsV, &
-              sampleUvsW, &
-              sampleVvsW, &
-              plotUVWvsUVW
+    character(len = *), parameter :: UVW_PATH = './outputs/observ/no_crit/uvw.dat'
+    character(len = *), parameter :: OUTPUT_FORMAT = '(2(f12.6,3x))'
+    character(len = *), parameter :: UVW_FORMAT = '(3(f12.6,3x))'
 
 contains
 
 
-    subroutine plotUVWvsUVW()
+    subroutine oneSample_plotUVWvsUVW(sample)
+        type (Star), dimension(:), intent(in) :: sample
         integer :: i
-        real(dp) :: vel_sum = 0.0_dp
+        integer :: unitUVW
+
+        open(getNewUnit(unitUVW), file = UVW_PATH, status='old')
+        do i = 1, size(sample)
+            write(unitUVW, OUTPUT_FORMAT) sample(i)%vel(:)
+        end do 
+    end subroutine oneSample_plotUVWvsUVW
+
+
+    subroutine threeSamples_plotUVWvsUVW(sampleUvsV, &
+                                         sampleUvsW, &
+                                         sampleVvsW)
+        type (Star), dimension(:), allocatable, intent(in) :: sampleUvsV
+        type (Star), dimension(:), allocatable, intent(in) :: sampleUvsW
+        type (Star), dimension(:), allocatable, intent(in) :: sampleVvsW
+        integer :: i
         integer :: unitUV, &
                    unitUW, &
                    unitVW
@@ -57,28 +71,5 @@ contains
                                              sampleVvsW(i)%vel(2)
             end do
         end if 
-    end subroutine plotUVWvsUVW
-
-
-    subroutine fillFullDataForUVWPlot(vel_hel, &
-                                      counter, &
-                                      vel_sum, &
-                                      vel_array, &
-                                      unitUVW)
-        
-        real*8, dimension(3), intent(in) :: vel_hel
-        integer, intent(in) :: counter
-        real*8, dimension(3), intent(inout) :: vel_sum
-        real*8, dimension(:, :), intent(inout) :: vel_array
-        ! TODO: hide this somewhere
-        integer, intent(in) :: unitUVW
-
-        vel_sum = vel_sum + vel_hel
-        vel_array(:, counter) = vel_hel
-
-        write(unitUVW, UVW_FORMAT) vel_hel
-        
-    end subroutine fillFullDataForUVWPlot
-
-
+    end subroutine threeSamples_plotUVWvsUVW
 end module plot_uvw
