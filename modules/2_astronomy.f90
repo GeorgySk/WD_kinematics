@@ -11,21 +11,23 @@ module astronomy
               convertGalacticToXYZ, &
               convertEquatorToGalact, &
               convertHoursToRad, &
-              convertDegreesToRad
-        ! Astronomical unit in km/s
-        real*8, parameter :: CTK = 4.74047d0
-        ! Transformation matrix from equatorial to galactic coordinates
-        real*8, parameter, dimension(3, 3) :: TRAN_MATR &
-            = reshape( (/-0.054875d0,-0.873437d0,-0.483835d0,&       
-                          0.494109d0,-0.444829d0, 0.746982d0,&       
-                         -0.867666d0,-0.198076d0, 0.455983d0/),&     
-                         shape(TRAN_MATR), order = (/2,1/))
-        ! Right ascension of Galactic pole
-        real*8, parameter :: RA_GPOLE = 192.859508d0 * PI / 180.d0 
-        ! Declination of Galactic pole
-        real*8, parameter :: DEC_GPOLE = 27.128336d0 * PI /180.d0 
-        ! Auxiliary angle
-        real*8, parameter :: AUX_ANGLE = 122.932d0 * PI / 180.d0 
+              convertDegreesToRad, &
+              convertEquatorMotionToUVW
+              
+    ! Astronomical unit in km/s
+    real*8, parameter :: CTK = 4.74047d0
+    ! Transformation matrix from equatorial to galactic coordinates
+    real*8, parameter, dimension(3, 3) :: TRAN_MATR &
+        = reshape( (/-0.054875d0,-0.873437d0,-0.483835d0,&       
+                      0.494109d0,-0.444829d0, 0.746982d0,&       
+                     -0.867666d0,-0.198076d0, 0.455983d0/),&     
+                     shape(TRAN_MATR), order = (/2,1/))
+    ! Right ascension of Galactic pole
+    real*8, parameter :: RA_GPOLE = 192.859508d0 * PI / 180.d0 
+    ! Declination of Galactic pole
+    real*8, parameter :: DEC_GPOLE = 27.128336d0 * PI /180.d0 
+    ! Auxiliary angle
+    real*8, parameter :: AUX_ANGLE = 122.932d0 * PI / 180.d0 
 
 contains
     

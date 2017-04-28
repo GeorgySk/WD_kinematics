@@ -1,5 +1,5 @@
 GFORTRAN module version '9' created from ./modules/2_astronomy.f90
-MD5:d0de7d879a5c8b6318c803dfa04ce2bc -- If you edit this, you'll get what you deserve.
+MD5:2505906c2aff67280c7c3110db1ddddb -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -17,21 +17,24 @@ MD5:d0de7d879a5c8b6318c803dfa04ce2bc -- If you edit this, you'll get what you de
 (2 'convertdegreestorad' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 FUNCTION ELEMENTAL PURE ALWAYS_EXPLICIT) (
 REAL 8 0 0 0 REAL ()) 3 0 (4) () 5 () () () 0 0)
-6 'convertequatortogalact' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
+6 'convertequatormotiontouvw' 'astronomy' '' 1 ((PROCEDURE
+UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
+UNKNOWN ()) 7 0 (8 9 10 11 12 13) () 0 () () () 0 0)
+14 'convertequatortogalact' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 7 0 (8 9 10 11) () 0 () () () 0 0)
-12 'convertgalactictoxyz' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN ()) 15 0 (16 17 18 19) () 0 () () () 0 0)
+20 'convertgalactictoxyz' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 DIMENSION FUNCTION IMPLICIT_PURE
-ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 13 0 (14 15 16) (1 0 EXPLICIT (
+ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 21 0 (22 23 24) (1 0 EXPLICIT (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '3')) 17 () () () 0 0)
-18 'converthourstorad' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
+INTEGER ()) 0 '3')) 25 () () () 0 0)
+26 'converthourstorad' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 FUNCTION ELEMENTAL PURE ALWAYS_EXPLICIT) (
-REAL 8 0 0 0 REAL ()) 19 0 (20) () 21 () () () 0 0)
-22 'ctk' 'astronomy' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+REAL 8 0 0 0 REAL ()) 27 0 (28) () 29 () () () 0 0)
+30 'ctk' 'astronomy' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.4bd8f7121ab4b8@1') () 0 () () () 0 0)
-23 'tran_matr' 'astronomy' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+31 'tran_matr' 'astronomy' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION) (REAL 8 0 0 0 REAL ()) 0 0 () (
 ARRAY (REAL 8 0 0 0 REAL ()) 2 (((CONSTANT (REAL 8 0 0 0 REAL ()) 0
 '-0.e0c49ba5e353f8@-1') ()) ((CONSTANT (REAL 8 0 0 0 REAL ()) 0
@@ -46,20 +49,20 @@ ARRAY (REAL 8 0 0 0 REAL ()) 2 (((CONSTANT (REAL 8 0 0 0 REAL ()) 0
 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0
 INTEGER ()) 0 '3')) 0 () () () 0 0)
-15 'l' '' '' 13 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+23 'l' '' '' 21 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-16 'b' '' '' 13 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+24 'b' '' '' 21 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-17 'coordinate' '' '' 13 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+25 'coordinate' '' '' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0 DIMENSION RESULT ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 0 0
 () (1 0 EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3')) 0 () () () 0 0)
-14 'r' '' '' 13 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+22 'r' '' '' 21 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-20 'angleinhours' '' '' 19 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
+28 'angleinhours' '' '' 27 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
 0 DUMMY) (CHARACTER 1 0 0 0 CHARACTER ((CONSTANT (INTEGER 4 0 0 0
 INTEGER ()) 0 '11'))) 0 0 () () 0 () () () 0 0)
-21 'angleinradians' '' '' 19 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+29 'angleinradians' '' '' 27 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN UNKNOWN 0 0 RESULT ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 0 0 ()
 () 0 () () () 0 0)
 4 'angleindegrees' '' '' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
@@ -68,16 +71,30 @@ INTEGER ()) 0 '11'))) 0 0 () () 0 () () () 0 0)
 5 'angleinradians' '' '' 3 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN UNKNOWN 0 0 RESULT ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 0 0 ()
 () 0 () () () 0 0)
-9 'dec' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+17 'dec' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+16 'ra' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-8 'ra' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+18 'l' '' '' 15 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-10 'l' '' '' 7 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+19 'b' '' '' 15 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-11 'b' '' '' 7 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+8 'rightascension' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+9 'declination' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+10 'distance' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+11 'motionindec' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+12 'motioninra' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+13 'vel_hel' '' '' 7 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DIMENSION DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 EXPLICIT (CONSTANT (
+INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '3')) 0 () () () 0 0)
 )
 
-('convertdegreestorad' 0 2 'convertequatortogalact' 0 6
-'convertgalactictoxyz' 0 12 'converthourstorad' 0 18 'ctk' 0 22
-'tran_matr' 0 23)
+('convertdegreestorad' 0 2 'convertequatormotiontouvw' 0 6
+'convertequatortogalact' 0 14 'convertgalactictoxyz' 0 20
+'converthourstorad' 0 26 'ctk' 0 30 'tran_matr' 0 31)
