@@ -23,7 +23,6 @@ module observational
 
 contains
 
-
     subroutine treatObservData(limogesCriterionIsUsed)
 
         logical, intent(in) :: limogesCriterionIsUsed

@@ -5,11 +5,6 @@ module astronomy
                     multiplyMatrixByVector
     implicit none
 
-    interface convertHoursToRad
-            module procedure scalar_convertHoursToRad
-            module procedure vector_convertHoursToRad
-    end interface convertHoursToRad
-
     interface convertDegreesToRad
             module procedure scalar_convertDegreesToRad
             module procedure vector_convertDegreesToRad
@@ -52,7 +47,7 @@ contains
         coordinate(3) = r * dsin(b)
     end function
 
-    function scalar_convertHoursToRad(angleInHours) result(angleInRadians)
+    elemental function convertHoursToRad(angleInHours) result(angleInRadians)
         character(len = 11), intent(in) :: angleInHours
         real*8 angleInRadians
         real*8 hours,minutes,seconds
@@ -62,28 +57,7 @@ contains
         read(angleInHours(7:11), *) seconds
         angleInRadians = (hours+(minutes+seconds/60.d0)/60.d0) * 15.d0 & 
                          * pi / 180.d0
-    end function scalar_convertHoursToRad
-
-    function vector_convertHoursToRad(angleInHours) result(angleInRadians)
-        character(len = 11), dimension(:), intent(in) :: angleInHours
-        ! QUESTION: I never allocate this. Is it OK?
-        real(dp), dimension(:), allocatable :: angleInRadians
-        character(len = 11) :: t
-        real(dp) :: hours, &
-                    minutes, &
-                    seconds
-        integer :: i
-        
-        do i =1, size(angleInHours)
-            ! QUESTION: Do I really need this t var?
-            t = angleInHours(i)
-            read(t(1:2), *) hours
-            read(t(4:5), *) minutes
-            read(t(7:11), *) seconds
-            angleInRadians(i) = (hours+(minutes+seconds/60.d0)/60.d0) * 15.d0 & 
-                         * pi / 180.d0
-        end do
-    end function vector_convertHoursToRad
+    end function convertHoursToRad
 
     function scalar_convertDegreesToRad(angleInDegrees) result(angleInRadians)
         character(len = 11), intent(in) :: angleInDegrees

@@ -21,10 +21,8 @@ module synthetic
                                                       &/WD_population_40pc&
                                                       &/output_data&
                                                       &/boot_rowell_thin_1.out'
-
 contains
 
-    
     subroutine treatSynthData(limogesCriterionIsUsed)
 
         logical, intent(in) :: limogesCriterionIsUsed
@@ -39,7 +37,6 @@ contains
                                                   sampleUvsMbol, &
                                                   sampleVvsMbol, &
                                                   sampleWvsMbol
-
 
         numberOfWDs = getNumberOfLines(INPUT_PATH)
 
