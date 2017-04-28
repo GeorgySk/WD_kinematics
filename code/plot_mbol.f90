@@ -118,7 +118,6 @@ contains
         real*8, dimension(:, :, :), intent(inout) :: velocityArrayForMbol
 
         binNumber = ceiling((magnitude - MBOL_MIN) / MBOL_INC)
-
         if (binNumber .le. NUM_OF_BINS .AND. binNumber .ge. 1) then
             numberOfWDsInBin(binNumber) &
                 = numberOfWDsInBin(binNumber) + 1
@@ -127,7 +126,6 @@ contains
             velocityArrayForMbol(:, binNumber, numberOfWDsInBin(binNumber)) &
                 = vel_hel
         end if
-        
     end subroutine fillFullDataForMbolBins
 
 
@@ -220,29 +218,29 @@ contains
 
         do binNumber = 1, NUM_OF_BINS
             
-            !NOTE: If there are no WDs in bin then it will be zero
-            averageVelocityInBin = sumOfVelocitiesInBin(:, binNumber) &
-                                   / dfloat(numberOfWDsInBin(binNumber))
-            do i = 1, numberOfWDsInBin(binNumber)
-                sumOfRestsSquared(:) = sumOfRestsSquared(:) &
-                                    + (velocityArrayForMbol(:, binNumber, i) &
-                                    - averageVelocityInBin(:)) ** 2
-            end do
-            if (numberOfWDsInBin(binNumber) .ne. 1) then
-                magnitudeSigma(:, binNumber) &
-                    = (sumOfRestsSquared(:) &
-                        / dfloat(numberOfWDsInBin(binNumber)) &
-                       - 1.d0) ** 0.5d0
-            else
-                magnitudeSigma(:, binNumber) = 100.d0
+            if (numberOfWDsInBin(binNumber) > 0) then
+                averageVelocityInBin(:) = sumOfVelocitiesInBin(:, binNumber) &
+                                       / dfloat(numberOfWDsInBin(binNumber))
+                do i = 1, numberOfWDsInBin(binNumber)
+                    sumOfRestsSquared(:) = sumOfRestsSquared(:) &
+                                        + (velocityArrayForMbol(:, binNumber, i) &
+                                        - averageVelocityInBin(:)) ** 2
+                end do
+                if (numberOfWDsInBin(binNumber) .ne. 1) then
+                    magnitudeSigma(:, binNumber) &
+                        = (sumOfRestsSquared(:) &
+                            / dfloat(numberOfWDsInBin(binNumber)) &
+                           - 1.d0) ** 0.5d0
+                else
+                    magnitudeSigma(:, binNumber) = 100.d0
+                end if
+    
+                write(unitMbolAvg, MBOL_AVG_FORMAT) &
+                    MBOL_MIN + MBOL_INC*(dfloat(binNumber) - 0.5d0), &
+                    averageVelocityInBin, &
+                    magnitudeSigma(:, binNumber)
+                sumOfRestsSquared = 0
             end if
-
-            write(unitMbolAvg, MBOL_AVG_FORMAT) &
-                MBOL_MIN + MBOL_INC*(dfloat(binNumber) - 0.5d0), &
-                averageVelocityInBin, &
-                magnitudeSigma(:, binNumber)
-            sumOfRestsSquared = 0
-
         end do
         
     end subroutine writeFullDataForMbolBins

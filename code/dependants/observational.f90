@@ -276,7 +276,7 @@ contains
             end do
 
             call writeFullDataForMbolBins(sumOfVelocitiesInBin, &
-                                          numberOfWDsInBin, &
+                                          numberOfWDsInBin_f, &
                                           velocityArrayForMbol, &
                                           unitMbolAvg)
 
@@ -285,7 +285,7 @@ contains
                                             velocityArray, &
                                             vel_avg, &
                                             sigma)
-            
+
             write(6,*) 'Average relative to Sun:', vel_avg
             write(6,*) 'Sigmas:                 ', sigma
 
