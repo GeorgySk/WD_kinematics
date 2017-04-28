@@ -18,7 +18,7 @@ rm $TMP/*.mod
 #   3rd goes module parts of program
 modules=""  # Here we put paths to compiled module files
 extension=".o"  # of compiled module file 
-for file in $SRC/*.f90 $SRC/dependants/*.f90 $CODE/*.f90 $CODE/dependants/*.f90; do
+for file in $SRC/*.f90 $CODE/*.f90; do
 	filename=${file##*/}  # Getting 'myModule.f90' string
 	filename=${filename%.*}  # Getting 'myModule' string
 	filename="$filename$extension"  # Get 'myModule.o' string

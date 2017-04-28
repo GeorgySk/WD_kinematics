@@ -1,5 +1,5 @@
-GFORTRAN module version '9' created from /tmp/SublimeLinter3-georgy/criterion.f90
-MD5:91bdc7e15ac42ca7dd5f35291ceb3f4e -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '9' created from ./code/2_criterion.f90
+MD5:63bc9fd8b471aad31fc6175a197caa48 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -47,6 +47,9 @@ UNKNOWN 0 0 0 0 UNKNOWN ()) 27 0 (28 29 30 31) () 0 () () () 0 0)
 32 'splitdataforuvwvsuvw' 'criterion' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE ALWAYS_EXPLICIT) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 33 0 (34 35 36 37) () 0 () () () 0 0)
+37 'samplevvsw' '' '' 33 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+ALLOCATABLE DIMENSION DUMMY) (DERIVED 8 0 0 0 DERIVED ()) 0 0 () (1 0
+DEFERRED () ()) 0 () () () 0 0)
 34 'whitedwarfs' '' '' 33 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DIMENSION DUMMY) (DERIVED 8 0 0 0 DERIVED ()) 0 0 () (1 0 ASSUMED_SHAPE
 (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') ()) 0 () () () 0 0)
@@ -54,9 +57,6 @@ DIMENSION DUMMY) (DERIVED 8 0 0 0 DERIVED ()) 0 0 () (1 0 ASSUMED_SHAPE
 ALLOCATABLE DIMENSION DUMMY) (DERIVED 8 0 0 0 DERIVED ()) 0 0 () (1 0
 DEFERRED () ()) 0 () () () 0 0)
 36 'sampleuvsw' '' '' 33 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
-ALLOCATABLE DIMENSION DUMMY) (DERIVED 8 0 0 0 DERIVED ()) 0 0 () (1 0
-DEFERRED () ()) 0 () () () 0 0)
-37 'samplevvsw' '' '' 33 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 ALLOCATABLE DIMENSION DUMMY) (DERIVED 8 0 0 0 DERIVED ()) 0 0 () (1 0
 DEFERRED () ()) 0 () () () 0 0)
 8 'Star' 'derived_types' '' 1 ((DERIVED UNKNOWN-INTENT UNKNOWN-PROC

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"get",
+				"getNewUnit"
+			],
+			[
+				"unit",
+				"unitInput"
+			],
+			[
+				"syn",
+				"synthesis"
+			],
+			[
 				"inte",
 				"intent"
 			],
@@ -136,10 +148,6 @@
 				"obsDataIsUsed"
 			],
 			[
-				"syn",
-				"synthDataIsUsed"
-			],
-			[
 				"sy",
 				"synthDataIsUsed"
 			],
@@ -154,10 +162,6 @@
 			[
 				"ge",
 				"getNewUnit"
-			],
-			[
-				"get",
-				"getNumberOfLines"
 			],
 			[
 				"mo",
@@ -230,10 +234,6 @@
 			[
 				"un",
 				"unitUV"
-			],
-			[
-				"unit",
-				"unitVW"
 			],
 			[
 				"o",
@@ -340,37 +340,19 @@
 	"buffers":
 	[
 		{
+			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/synthetic.f90",
+			"settings":
+			{
+				"buffer_size": 11712,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/observational.f90",
 			"settings":
 			{
-				"buffer_size": 16112,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_mbol.f90",
-			"settings":
-			{
-				"buffer_size": 18328,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/math.f90",
-			"settings":
-			{
-				"buffer_size": 3227,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/derived_types.f90",
-			"settings":
-			{
-				"buffer_size": 2507,
+				"buffer_size": 4441,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -507,8 +489,11 @@
 	],
 	"file_history":
 	[
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_uvw.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/commons.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/derived_types.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/math.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_mbol.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_uvw.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/criterion.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/observational.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_uvw.f90",
@@ -645,6 +630,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"inputData",
+			"unitInput",
+			"numberOfWDs",
+			"INPUT_PATH",
 			"MBOL_MIN",
 			"MBOL_AVG_FORMAT",
 			"MBOL_AVG_U_PATH",
@@ -768,11 +757,7 @@
 			"xya",
 			"\t",
 			"9826",
-			"( ",
-			"$+$",
-			"$-$",
-			"&",
-			" &"
+			"( "
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -911,24 +896,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/observational.f90",
+					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/synthetic.f90",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16112,
+						"buffer_size": 11712,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2644,
-								2644
+								5503,
+								5503
 							]
 						],
 						"settings":
@@ -936,55 +921,27 @@
 							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 395.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_mbol.f90",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 18328,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6391,
-								6391
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1245.0,
+						"translation.y": 1485.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/math.f90",
+					"buffer": 1,
+					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/observational.f90",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3227,
+						"buffer_size": 4441,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1156,
-								1156
+								113,
+								113
 							]
 						],
 						"settings":
@@ -992,39 +949,10 @@
 							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/derived_types.f90",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2507,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								70,
-								70
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
