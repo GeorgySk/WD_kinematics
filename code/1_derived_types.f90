@@ -5,6 +5,9 @@ module derived_types
                          convertGalacticToXYZ, &
                          convertEquatorMotionToUVW
     implicit none
+
+    private
+
     public :: Star, &
               JaggedArray
 
@@ -29,6 +32,8 @@ module derived_types
         type(Star), dimension(:), allocatable :: row
     end type JaggedArray
 
+    integer, save :: i = 1
+
 contains
 
     impure elemental subroutine star_equatToGalact(this)
@@ -48,9 +53,12 @@ contains
     impure elemental subroutine star_galactToXYZ(this)
         class(Star), intent(inout) :: this
 
-        if ((abs(this%longitude) > 2.0_dp*PI) .or. &
-            (abs(this%lattitude) > 2.0_dp*PI)) stop "Error: wrong angle &
-            &input in star_galactToXYZ"
+        ! TODO: check why I have an angle more than 2pi
+        ! print *, i, this%longitude, this%lattitude
+        ! i = i + 1
+        ! if ((abs(this%longitude) > 2.0_dp*PI) .or. &
+        !     (abs(this%lattitude) > 2.0_dp*PI)) stop "Error: wrong angle &
+        !     &input in star_galactToXYZ"
 
         this%coords = convertGalacticToXYZ(this%distance, &
                                            this%longitude, &

@@ -1,5 +1,5 @@
 GFORTRAN module version '9' created from ./code/3_synthetic.f90
-MD5:bb3eaee6815cf5a9bbdd7e44f75cbae0 -- If you edit this, you'll get what you deserve.
+MD5:037fe5549ed376c2272ea59570ff4dc9 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -74,20 +74,24 @@ UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION) UNKNOWN-ACCESS ())) PUBLIC (
 ('equattouvw' (PUBLIC OVERRIDABLE PASS SPECIFIC NO_PPC '' 1 23)) (
 'galacttoxyz' (PUBLIC OVERRIDABLE PASS SPECIFIC NO_PPC '' 1 19))) () ())
 () 0 0 98959290)
+10 '__copy_derived_types_Star' 'derived_types' '' 39 ((PROCEDURE
+UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 SUBROUTINE ELEMENTAL PURE
+ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 39 0 (40 41) () 0 () () ()
+0 0)
+40 'src' '' '' 39 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+41 'dst' '' '' 39 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 15 'star_equattogalact' 'derived_types' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ELEMENTAL ALWAYS_EXPLICIT) (
-UNKNOWN 0 0 0 0 UNKNOWN ()) 39 0 (40) () 0 () () () 0 0)
+UNKNOWN 0 0 0 0 UNKNOWN ()) 42 0 (43) () 0 () () () 0 0)
 23 'star_equattouvw' 'derived_types' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ELEMENTAL ALWAYS_EXPLICIT) (
-UNKNOWN 0 0 0 0 UNKNOWN ()) 41 0 (42) () 0 () () () 0 0)
+UNKNOWN 0 0 0 0 UNKNOWN ()) 44 0 (45) () 0 () () () 0 0)
 19 'star_galacttoxyz' 'derived_types' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ELEMENTAL ALWAYS_EXPLICIT) (
-UNKNOWN 0 0 0 0 UNKNOWN ()) 43 0 (44) () 0 () () () 0 0)
-10 '__copy_derived_types_Star' 'derived_types' '' 45 ((PROCEDURE
-UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 SUBROUTINE ELEMENTAL PURE
-ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 45 0 (46 47) () 0 () () ()
-0 0)
-40 'this' '' '' 39 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+UNKNOWN 0 0 0 0 UNKNOWN ()) 46 0 (47) () 0 () () () 0 0)
+43 'this' '' '' 42 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CLASS 48 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
 12 'src' '' '' 11 ((VARIABLE IN UNKNOWN-PROC DECL UNKNOWN 0 0 DUMMY) (
 DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
@@ -99,14 +103,6 @@ DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 (CLASS 48 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
 25 'this' '' '' 24 ((VARIABLE INOUT UNKNOWN-PROC DECL UNKNOWN 0 0 DUMMY)
 (CLASS 48 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
-46 'src' '' '' 45 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
-47 'dst' '' '' 45 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
-44 'this' '' '' 43 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
-DUMMY) (CLASS 48 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
-42 'this' '' '' 41 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
-DUMMY) (CLASS 48 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
 48 '__class_derived_types_Star' 'derived_types' '' 1 ((DERIVED
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 1 IS_CLASS) (UNKNOWN 0 0 0
 0 UNKNOWN ()) 0 0 () () 0 ((49 '_data' (DERIVED 8 0 0 0 DERIVED ()) () (
@@ -114,6 +110,10 @@ UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER)
 PRIVATE ()) (50 '_vptr' (DERIVED 3 0 0 0 DERIVED ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER) PRIVATE ()))
 UNKNOWN-ACCESS (() () () ()) () 0 0 0)
+45 'this' '' '' 44 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CLASS 48 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
+47 'this' '' '' 46 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CLASS 48 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
 )
 
 ('__vtab_derived_types_Star' 0 2 '__vtype_derived_types_Star' 0 3
