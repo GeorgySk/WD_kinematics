@@ -1,5 +1,5 @@
 GFORTRAN module version '9' created from ./code/3_observational.f90
-MD5:bce112ac10fd5801da5f79fa29188b4b -- If you edit this, you'll get what you deserve.
+MD5:2de481e976c9e4924a15e41d701848b3 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -83,9 +83,9 @@ ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 41 0 (42 43) () 0 () () ()
 0 0)
 40 'this' '' '' 39 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CLASS 44 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
-42 'src' '' '' 41 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 43 'dst' '' '' 41 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+42 'src' '' '' 41 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 12 'src' '' '' 11 ((VARIABLE IN UNKNOWN-PROC DECL UNKNOWN 0 0 DUMMY) (
 DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
@@ -105,6 +105,8 @@ MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ELEMENTAL ALWAYS_EXPLICIT) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 47 0 (48) () 0 () () () 0 0)
 46 'this' '' '' 45 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CLASS 44 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
+48 'this' '' '' 47 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CLASS 44 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
 44 '__class_derived_types_Star' 'derived_types' '' 1 ((DERIVED
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 1 IS_CLASS) (UNKNOWN 0 0 0
 0 UNKNOWN ()) 0 0 () () 0 ((49 '_data' (DERIVED 8 0 0 0 DERIVED ()) () (
@@ -112,8 +114,6 @@ UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER)
 PRIVATE ()) (50 '_vptr' (DERIVED 3 0 0 0 DERIVED ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER) PRIVATE ()))
 UNKNOWN-ACCESS (() () () ()) () 0 0 0)
-48 'this' '' '' 47 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
-DUMMY) (CLASS 44 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
 )
 
 ('__vtab_derived_types_Star' 0 2 '__vtype_derived_types_Star' 0 3

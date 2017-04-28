@@ -1,5 +1,5 @@
 GFORTRAN module version '9' created from ./code/1_derived_types.f90
-MD5:5d3d162f1c627745bc1216d1f6996987 -- If you edit this, you'll get what you deserve.
+MD5:209d519a9894e379f4224ffd1b8f5536 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -105,6 +105,10 @@ UNKNOWN-ACCESS (() () () ()) () 0 0 0)
 UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 SUBROUTINE ELEMENTAL PURE
 ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 50 0 (51 52) () 0 () () ()
 0 0)
+51 'src' '' '' 50 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 2 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+52 'dst' '' '' 50 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 2 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 46 'this' '' '' 45 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CLASS 47 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
 42 'this' '' '' 41 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
@@ -119,10 +123,6 @@ DERIVED 2 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 (CLASS 47 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
 38 'this' '' '' 37 ((VARIABLE INOUT UNKNOWN-PROC DECL UNKNOWN 0 0 DUMMY)
 (CLASS 47 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
-51 'src' '' '' 50 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(DERIVED 2 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
-52 'dst' '' '' 50 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(DERIVED 2 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 )
 
 ('Jaggedarray' 0 3 'Star' 0 2 '__def_init_derived_types_Star' 0 18

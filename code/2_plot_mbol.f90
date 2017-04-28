@@ -223,6 +223,7 @@ contains
             do i = 1, size(sampleWvsMbol)
                 binNumber = ceiling((sampleWvsMbol(i)%magnitude - MBOL_MIN) &
                                     / MBOL_INC)
+                ! print*, i, binNumber,sampleWvsMbol(i)%magnitude
                 wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
             end do
             do i = 1, NUM_OF_BINS

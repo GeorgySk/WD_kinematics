@@ -22,9 +22,9 @@ contains
         integer :: xHighestCounter = 0, &
                    yHighestCounter = 0, &
                    zHighestCounter = 0, &
-                   counterUvsV = 1, &
-                   counterUvsW = 1, &
-                   counterVvsW = 1
+                   counterUvsV = 0, &
+                   counterUvsW = 0, &
+                   counterVvsW = 0
         integer :: i
 
         ! Calculating number of WDs for each plot
@@ -51,16 +51,16 @@ contains
             highestCoordValue = maxval(abs(whiteDwarfs(i)%coords))
             if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(1))) &
                 .lt. 1.0d-5) then
-                sampleVvsW(counterVvsW) = whiteDwarfs(i)
                 counterVvsW = counterVvsW + 1
+                sampleVvsW(counterVvsW) = whiteDwarfs(i)
             else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(2))) &
                 .lt. 1.0d-5) then
-                sampleUvsW(counterUvsW) = whiteDwarfs(i)
                 counterUvsW = counterUvsW + 1
+                sampleUvsW(counterUvsW) = whiteDwarfs(i)
             else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(3))) &
                 .lt. 1.0d-5) then
-                sampleUvsV(counterUvsV) = whiteDwarfs(i)
                 counterUvsV = counterUvsV + 1
+                sampleUvsV(counterUvsV) = whiteDwarfs(i)
             end if
         end do
     end subroutine splitDataForUVWvsUVW
@@ -78,9 +78,9 @@ contains
         integer :: xHighestCounter = 0, &
                    yHighestCounter = 0, &
                    zHighestCounter = 0, &
-                   counterUvsMbol = 1, &
-                   counterVvsMbol = 1, &
-                   counterWvsMbol = 1
+                   counterUvsMbol = 0, &
+                   counterVvsMbol = 0, &
+                   counterWvsMbol = 0
         integer :: i
 
         ! Calculating number of WDs for each plot
@@ -100,29 +100,29 @@ contains
         
         allocate(sampleUvsMbol(yHighestCounter + zHighestCounter))
         allocate(sampleVvsMbol(xHighestCounter + zHighestCounter))
-        allocate(sampleWvsMbol(xHighestCounter + zHighestCounter))
+        allocate(sampleWvsMbol(xHighestCounter + yHighestCounter))
 
         ! Distributing WDs in samples for each plot
         do i = 1, size(whiteDwarfs)
             highestCoordValue = maxval(abs(whiteDwarfs(i)%coords))
             if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(1))) &
                 .lt. 1.0d-5) then
-                sampleVvsMbol(counterVvsMbol) = whiteDwarfs(i)
-                sampleWvsMbol(counterWvsMbol) = whiteDwarfs(i)
                 counterVvsMbol = counterVvsMbol + 1
                 counterWvsMbol = counterWvsMbol + 1
+                sampleVvsMbol(counterVvsMbol) = whiteDwarfs(i)
+                sampleWvsMbol(counterWvsMbol) = whiteDwarfs(i)
             else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(2))) &
                 .lt. 1.0d-5) then
-                sampleUvsMbol(counterUvsMbol) = whiteDwarfs(i)
-                sampleWvsMbol(counterWvsMbol) = whiteDwarfs(i)
                 counterUvsMbol = counterUvsMbol + 1
                 counterWvsMbol = counterWvsMbol + 1
+                sampleUvsMbol(counterUvsMbol) = whiteDwarfs(i)
+                sampleWvsMbol(counterWvsMbol) = whiteDwarfs(i)
             else if (abs(highestCoordValue - abs(whiteDwarfs(i)%coords(3))) &
                 .lt. 1.0d-5) then
-                sampleUvsMbol(counterUvsMbol) = whiteDwarfs(i)
-                sampleVvsMbol(counterVvsMbol) = whiteDwarfs(i)
                 counterUvsMbol = counterUvsMbol + 1
                 counterVvsMbol = counterVvsMbol + 1
+                sampleUvsMbol(counterUvsMbol) = whiteDwarfs(i)
+                sampleVvsMbol(counterVvsMbol) = whiteDwarfs(i)
             end if
         end do
     end subroutine splitDataForUVWvsMbol

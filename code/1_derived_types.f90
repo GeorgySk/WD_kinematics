@@ -32,7 +32,7 @@ module derived_types
         type(Star), dimension(:), allocatable :: row
     end type JaggedArray
 
-    integer, save :: i = 1
+    ! integer, save :: i = 1
 
 contains
 
