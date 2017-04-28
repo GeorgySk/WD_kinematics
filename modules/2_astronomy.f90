@@ -1,25 +1,10 @@
 module astronomy
-
     use, intrinsic :: iso_fortran_env, dp=>real64
     use math, only: PI, &
                     multiplyMatrixByVector
     implicit none
 
-    interface convertDegreesToRad
-            module procedure scalar_convertDegreesToRad
-            module procedure vector_convertDegreesToRad
-    end interface convertDegreesToRad
-
-    private :: RA_GPOLE, &
-               DEC_GPOLE, &
-               AUX_ANGLE, &
-               fillRotationMatrix
-        ! Right ascension of Galactic pole
-        real*8, parameter :: RA_GPOLE = 192.859508d0 * PI / 180.d0 
-        ! Declination of Galactic pole
-        real*8, parameter :: DEC_GPOLE = 27.128336d0 * PI /180.d0 
-        ! Auxiliary angle
-        real*8, parameter :: AUX_ANGLE = 122.932d0 * PI / 180.d0 
+    private 
     
     public :: CTK, &
               TRAN_MATR, &
@@ -35,6 +20,12 @@ module astronomy
                           0.494109d0,-0.444829d0, 0.746982d0,&       
                          -0.867666d0,-0.198076d0, 0.455983d0/),&     
                          shape(TRAN_MATR), order = (/2,1/))
+        ! Right ascension of Galactic pole
+        real*8, parameter :: RA_GPOLE = 192.859508d0 * PI / 180.d0 
+        ! Declination of Galactic pole
+        real*8, parameter :: DEC_GPOLE = 27.128336d0 * PI /180.d0 
+        ! Auxiliary angle
+        real*8, parameter :: AUX_ANGLE = 122.932d0 * PI / 180.d0 
 
 contains
     
@@ -46,6 +37,7 @@ contains
         coordinate(2) = r * dcos(b) * dsin(l)
         coordinate(3) = r * dsin(b)
     end function
+
 
     elemental function convertHoursToRad(angleInHours) result(angleInRadians)
         character(len = 11), intent(in) :: angleInHours
@@ -59,7 +51,8 @@ contains
                          * pi / 180.d0
     end function convertHoursToRad
 
-    function scalar_convertDegreesToRad(angleInDegrees) result(angleInRadians)
+
+    elemental function convertDegreesToRad(angleInDegrees) result(angleInRadians)
         character(len = 11), intent(in) :: angleInDegrees
         real*8 angleInRadians
         real*8 degrees, arcmins, arcsecs
@@ -68,29 +61,7 @@ contains
         read(angleInDegrees(4:5), *) arcmins
         read(angleInDegrees(7:11), *) arcsecs
         angleInRadians = (degrees+(arcmins+arcsecs/60.d0)/60.d0) * pi / 180.d0
-    end function scalar_convertDegreesToRad
-
-
-    function vector_convertDegreesToRad(angleInDegrees) result(angleInRadians)
-        character(len = 11), dimension(:), intent(in) :: angleInDegrees
-        ! QUESTION: I never allocate this. Is it OK?
-        real(dp), dimension(:), allocatable :: angleInRadians
-        character(len = 11) :: t
-        real(dp) degrees, &
-                 arcmins, &
-                 arcsecs
-        integer :: i
-
-        do i =1, size(angleInDegrees)
-            ! QUESTION: Do I really need this t var?
-            t = angleInDegrees(i)
-            read(t(1:2), *) degrees
-            read(t(4:5), *) arcmins
-            read(t(7:11), *) arcsecs
-            angleInRadians(i) = (degrees+(arcmins+arcsecs/60.d0)/60.d0) &
-                                * pi / 180.d0
-        end do 
-    end function vector_convertDegreesToRad
+    end function convertDegreesToRad
 
 
     subroutine convertEquatorToGalact(ra,dec,l,b)
