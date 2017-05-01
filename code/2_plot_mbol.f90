@@ -165,9 +165,12 @@ contains
             ! U vs Mbol
             allocate(binsUvsMbol(NUM_OF_BINS))
             do i = 1, size(sampleUvsMbol)
-                binNumber = ceiling((sampleUvsMbol(i)%magnitude - MBOL_MIN) &
+                if (sampleUvsMbol(i)%magnitude > MBOL_MIN .and. &
+                    sampleUvsMbol(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleUvsMbol(i)%magnitude - MBOL_MIN) &
                                     / MBOL_INC)
-                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                end if
             end do
             do i = 1, NUM_OF_BINS
                 if (wdInBinCounter(i) > 0) then
@@ -176,10 +179,13 @@ contains
             end do
             wdInBinCounter = 0
             do i = 1, size(sampleUvsMbol)
-                binNumber = ceiling((sampleUvsMbol(i)%magnitude - MBOL_MIN) &
-                                    / MBOL_INC)
-                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
-                binsUvsMbol(binNumber)%row(wdInBinCounter(binNumber)) = sampleUvsMbol(i)
+                if (sampleUvsMbol(i)%magnitude > MBOL_MIN .and. &
+                    sampleUvsMbol(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleUvsMbol(i)%magnitude - MBOL_MIN) &
+                                         / MBOL_INC)
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                    binsUvsMbol(binNumber)%row(wdInBinCounter(binNumber)) = sampleUvsMbol(i)
+                end if
             end do
             open(getNewUnit(unitMbolAvgU), file = MBOL_AVG_U_PATH, status='old')
             do i = 1, NUM_OF_BINS
@@ -196,9 +202,12 @@ contains
             wdInBinCounter = 0
             allocate(binsVvsMbol(NUM_OF_BINS))
             do i = 1, size(sampleVvsMbol)
-                binNumber = ceiling((sampleVvsMbol(i)%magnitude - MBOL_MIN) &
-                                    / MBOL_INC)
-                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                if (sampleVvsMbol(i)%magnitude > MBOL_MIN .and. &
+                        sampleVvsMbol(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleVvsMbol(i)%magnitude - MBOL_MIN) &
+                                     / MBOL_INC)
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                end if
             end do
             do i = 1, NUM_OF_BINS
                 if (wdInBinCounter(i) > 0) then
@@ -207,10 +216,13 @@ contains
             end do
             wdInBinCounter = 0
             do i = 1, size(sampleVvsMbol)
-                binNumber = ceiling((sampleVvsMbol(i)%magnitude - MBOL_MIN) &
-                                    / MBOL_INC)
-                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
-                binsVvsMbol(binNumber)%row(wdInBinCounter(binNumber)) = sampleVvsMbol(i)
+                if (sampleVvsMbol(i)%magnitude > MBOL_MIN .and. &
+                    sampleVvsMbol(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleVvsMbol(i)%magnitude - MBOL_MIN) &
+                                        / MBOL_INC)
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                    binsVvsMbol(binNumber)%row(wdInBinCounter(binNumber)) = sampleVvsMbol(i)
+                end if
             end do
             open(getNewUnit(unitMbolAvgV), file = MBOL_AVG_V_PATH, status='old')
             do i = 1, NUM_OF_BINS
@@ -227,10 +239,13 @@ contains
             wdInBinCounter = 0
             allocate(binsWvsMbol(NUM_OF_BINS))
             do i = 1, size(sampleWvsMbol)
-                binNumber = ceiling((sampleWvsMbol(i)%magnitude - MBOL_MIN) &
-                                    / MBOL_INC)
-                ! print*, i, binNumber,sampleWvsMbol(i)%magnitude
-                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                if (sampleWvsMbol(i)%magnitude > MBOL_MIN .and. &
+                    sampleWvsMbol(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleWvsMbol(i)%magnitude - MBOL_MIN) &
+                                        / MBOL_INC)
+                    ! print*, i, binNumber,sampleWvsMbol(i)%magnitude
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                end if
             end do
             do i = 1, NUM_OF_BINS
                 if (wdInBinCounter(i) > 0) then
@@ -239,10 +254,13 @@ contains
             end do
             wdInBinCounter = 0
             do i = 1, size(sampleWvsMbol)
-                binNumber = ceiling((sampleWvsMbol(i)%magnitude - MBOL_MIN) &
-                                    / MBOL_INC)
-                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
-                binsWvsMbol(binNumber)%row(wdInBinCounter(binNumber)) = sampleWvsMbol(i)
+                if (sampleWvsMbol(i)%magnitude > MBOL_MIN .and. &
+                        sampleWvsMbol(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleWvsMbol(i)%magnitude - MBOL_MIN) &
+                                        / MBOL_INC)
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                    binsWvsMbol(binNumber)%row(wdInBinCounter(binNumber)) = sampleWvsMbol(i)
+                end if
             end do
             open(getNewUnit(unitMbolAvgW), file = MBOL_AVG_W_PATH, status='old')
             do i = 1, NUM_OF_BINS
