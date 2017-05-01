@@ -58,7 +58,6 @@ contains
 
         call whiteDwarfs(:)%equatToGalact
         call whiteDwarfs(:)%galactToXYZ
-        call whiteDwarfs(:)%equatToUVW
 
         if (limogesCriterionIsUsed) then
             print *, "Limoges criterion is used"
@@ -77,9 +76,9 @@ contains
                                sampleVvsMbol, &
                                sampleWvsMbol)
             print *, "Average velocity components:", &
-                sampleUvsMbol(:)%vel(1) / size(sampleUvsMbol), &
-                sampleVvsMbol(:)%vel(2) / size(sampleVvsMbol), &
-                sampleWvsMbol(:)%vel(3) / size(sampleWvsMbol)
+                sum(sampleUvsMbol(:)%vel(1)) / size(sampleUvsMbol), &
+                sum(sampleVvsMbol(:)%vel(2)) / size(sampleVvsMbol), &
+                sum(sampleWvsMbol(:)%vel(3)) / size(sampleWvsMbol)
             print *, "Standart deviations:        ", &
                 getSD(sampleUvsMbol(:)%vel(1)), &
                 getSD(sampleVvsMbol(:)%vel(2)), &
@@ -88,9 +87,9 @@ contains
             call plotUVWvsUVW(whiteDwarfs)
             call plotUVWvsMbol(whiteDwarfs)
             print *, "Average velocity components:", &
-                whiteDwarfs(:)%vel(1) / size(whiteDwarfs), &
-                whiteDwarfs(:)%vel(2) / size(whiteDwarfs), &
-                whiteDwarfs(:)%vel(3) / size(whiteDwarfs)
+                sum(whiteDwarfs(:)%vel(1)) / size(whiteDwarfs), &
+                sum(whiteDwarfs(:)%vel(2)) / size(whiteDwarfs), &
+                sum(whiteDwarfs(:)%vel(3)) / size(whiteDwarfs)
             print *, "Standart deviations:        ", &
                 getSD(whiteDwarfs(:)%vel(1)), &
                 getSD(whiteDwarfs(:)%vel(2)), &

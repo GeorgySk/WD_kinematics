@@ -80,9 +80,12 @@ contains
         ! Filling bins
         allocate(bins(NUM_OF_BINS))
         do i = 1, size(sample)
-            binNumber = ceiling((sample(i)%magnitude - MBOL_MIN) &
-                                / MBOL_INC)
-            wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+            if (sample(i)%magnitude > MBOL_MIN .and. &
+                    sample(i)%magnitude < MBOL_MAX) then
+                binNumber = ceiling((sample(i)%magnitude - MBOL_MIN) &
+                                    / MBOL_INC)
+                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+            end if
         end do
         do i = 1, NUM_OF_BINS
             if (wdInBinCounter(i) > 0) then
@@ -91,10 +94,13 @@ contains
         end do
         wdInBinCounter = 0
         do i = 1, size(sample)
-            binNumber = ceiling((sample(i)%magnitude - MBOL_MIN) &
-                                / MBOL_INC)
-            wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
-            bins(binNumber)%row(wdInBinCounter(binNumber)) = sample(i)
+            if (sample(i)%magnitude > MBOL_MIN .and. &
+                    sample(i)%magnitude < MBOL_MAX) then
+                binNumber = ceiling((sample(i)%magnitude - MBOL_MIN) &
+                                    / MBOL_INC)
+                wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                bins(binNumber)%row(wdInBinCounter(binNumber)) = sample(i)
+            end if
         end do
         open(getNewUnit(unitMbolAvg), file = MBOL_AVG_PATH, status='old')
         do i = 1, NUM_OF_BINS
