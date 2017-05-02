@@ -119,18 +119,18 @@ contains
         end do
         open(getNewUnit(unitMbolAvg), file = mbol_avg_path, status='old')
         do i = 1, NUM_OF_BINS
-            if (allocated(bins(binNumber)%row)) then
+            if (allocated(bins(i)%row)) then
                 write(unitMbolAvg, MBOL_AVG_FORMAT) &
                     MBOL_MIN + MBOL_INC*(dfloat(i) - 0.5_dp), &
-                    sum(bins(binNumber)%row(:)%vel(1)) &
-                        / size(bins(binNumber)%row), &
-                    sum(bins(binNumber)%row(:)%vel(2)) &
-                        / size(bins(binNumber)%row), &
-                    sum(bins(binNumber)%row(:)%vel(3)) &
-                        / size(bins(binNumber)%row), &
-                    getSD(bins(binNumber)%row(:)%vel(1)), &
-                    getSD(bins(binNumber)%row(:)%vel(2)), &
-                    getSD(bins(binNumber)%row(:)%vel(3))
+                    sum(bins(i)%row(:)%vel(1)) &
+                        / size(bins(i)%row), &
+                    sum(bins(i)%row(:)%vel(2)) &
+                        / size(bins(i)%row), &
+                    sum(bins(i)%row(:)%vel(3)) &
+                        / size(bins(i)%row), &
+                    getSD(bins(i)%row(:)%vel(1)), &
+                    getSD(bins(i)%row(:)%vel(2)), &
+                    getSD(bins(i)%row(:)%vel(3))
             end if
         end do
     end subroutine oneSample_plotUVWvsMbol
@@ -232,12 +232,12 @@ contains
             end do
             open(getNewUnit(unitMbolAvgU), file = mbol_avg_u_path, status='old')
             do i = 1, NUM_OF_BINS
-                if (allocated(binsUvsMbol(binNumber)%row)) then
+                if (allocated(binsUvsMbol(i)%row)) then
                     write(unitMbolAvgU, MBOL_AVG_FORMAT) &
                         MBOL_MIN + MBOL_INC*(dfloat(i) - 0.5_dp), &
-                        sum(binsUvsMbol(binNumber)%row(:)%vel(1)) &
-                            / size(binsUvsMbol(binNumber)%row), &
-                        getSD(binsUvsMbol(binNumber)%row(:)%vel(1))
+                        sum(binsUvsMbol(i)%row(:)%vel(1)) &
+                            / size(binsUvsMbol(i)%row), &
+                        getSD(binsUvsMbol(i)%row(:)%vel(1))
                 end if
             end do
 
@@ -269,12 +269,12 @@ contains
             end do
             open(getNewUnit(unitMbolAvgV), file = mbol_avg_v_path, status='old')
             do i = 1, NUM_OF_BINS
-                if (allocated(binsVvsMbol(binNumber)%row)) then
+                if (allocated(binsVvsMbol(i)%row)) then
                     write(unitMbolAvgV, MBOL_AVG_FORMAT) &
                         MBOL_MIN + MBOL_INC*(dfloat(i) - 0.5_dp), &
-                        sum(binsVvsMbol(binNumber)%row(:)%vel(2)) &
-                            / size(binsVvsMbol(binNumber)%row), &
-                        getSD(binsVvsMbol(binNumber)%row(:)%vel(2))
+                        sum(binsVvsMbol(i)%row(:)%vel(2)) &
+                            / size(binsVvsMbol(i)%row), &
+                        getSD(binsVvsMbol(i)%row(:)%vel(2))
                 end if
             end do
 
@@ -307,12 +307,12 @@ contains
             end do
             open(getNewUnit(unitMbolAvgW), file = mbol_avg_w_path, status='old')
             do i = 1, NUM_OF_BINS
-                if (allocated(binsWvsMbol(binNumber)%row)) then
+                if (allocated(binsWvsMbol(i)%row)) then
                     write(unitMbolAvgW, MBOL_AVG_FORMAT) &
                         MBOL_MIN + MBOL_INC*(dfloat(i) - 0.5_dp), &
-                        sum(binsWvsMbol(binNumber)%row(:)%vel(3)) &
-                            / size(binsWvsMbol(binNumber)%row), &
-                        getSD(binsWvsMbol(binNumber)%row(:)%vel(3))
+                        sum(binsWvsMbol(i)%row(:)%vel(3)) &
+                            / size(binsWvsMbol(i)%row), &
+                        getSD(binsWvsMbol(i)%row(:)%vel(3))
                 end if
             end do
         end if

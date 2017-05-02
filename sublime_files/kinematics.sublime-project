@@ -2,7 +2,8 @@
 	"folders":
 	[
 		{
-			"path": "/home/georgy/Documents/program/additional_programs/WD_kinematics"
+			// "path": "/home/georgy/Documents/program/additional_programs/WD_kinematics"
+            "path": ".."
 		}
 	]
 }

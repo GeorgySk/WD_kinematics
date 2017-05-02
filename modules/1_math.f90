@@ -39,5 +39,10 @@ contains
         avg = sum(array) / size(array)
         sumOfRestsSquared = sum((array(:) - avg) ** 2)
         sD = sqrt(sumOfRestsSquared / size(array))
+        ! NOTE: this shouldn't be here. What shoud we do when we have 
+        ! only 1 element?
+        if (size(array) == 1) then
+            sD = 100.0_dp
+        end if
     end function getSD
 end module

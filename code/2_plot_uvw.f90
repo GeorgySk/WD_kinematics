@@ -55,7 +55,7 @@ contains
 
         open(getNewUnit(unitUVW), file = uvw_path, status='old')
         do i = 1, size(sample)
-            write(unitUVW, UV_FORMAT) sample(i)%vel(:)
+            write(unitUVW, UVW_FORMAT) sample(i)%vel(:)
         end do 
     end subroutine oneSample_plotUVWvsUVW
 

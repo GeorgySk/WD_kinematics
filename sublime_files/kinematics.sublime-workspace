@@ -4,16 +4,16 @@
 		"selected_items":
 		[
 			[
-				"get",
-				"getNewUnit"
+				"sam",
+				"sampleWvsMbol"
 			],
 			[
-				"unit",
-				"unitInput"
+				"sa",
+				"sampleUvsMbol"
 			],
 			[
-				"syn",
-				"synthesis"
+				"pl",
+				"plotUVWvsMbol"
 			],
 			[
 				"inte",
@@ -148,6 +148,10 @@
 				"obsDataIsUsed"
 			],
 			[
+				"syn",
+				"synthDataIsUsed"
+			],
+			[
 				"sy",
 				"synthDataIsUsed"
 			],
@@ -162,6 +166,10 @@
 			[
 				"ge",
 				"getNewUnit"
+			],
+			[
+				"get",
+				"getNumberOfLines"
 			],
 			[
 				"mo",
@@ -234,6 +242,10 @@
 			[
 				"un",
 				"unitUV"
+			],
+			[
+				"unit",
+				"unitVW"
 			],
 			[
 				"o",
@@ -339,24 +351,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/synthetic.f90",
-			"settings":
-			{
-				"buffer_size": 11712,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/observational.f90",
-			"settings":
-			{
-				"buffer_size": 4441,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "Packages/User/myBuildSystems/kinematics.sublime-build",
 	"build_system_choices":
@@ -482,19 +476,27 @@
 	},
 	"expanded_folders":
 	[
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules"
+		"/home/georgy/Documents/program/additional_programs/kinematics",
+		"/home/georgy/Documents/program/additional_programs/kinematics/code"
 	],
 	"file_history":
 	[
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/commons.f90",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/derived_types.f90",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/math.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/observational.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/observ/no_crit/mbol_avg.dat",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/synth/limoges/mbol_avg_w.dat",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/synth/limoges/mbol_avg_v.dat",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/main.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_mbol.f90",
+		"/home/georgy/.bashrc",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/commons.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_uvw.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/criterion.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/dependants/astronomy.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/files.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/derived_types.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/terminal_calls.f90",
+		"/home/georgy/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/math.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/dependants/observational.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/plot_uvw.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/modules/math.f90",
@@ -508,8 +510,6 @@
 		"/home/georgy/Documents/program/additional_programs/kinematics/main.sh",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/synthetic.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/observational.f90",
-		"/home/georgy/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
-		"/home/georgy/.bashrc",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/criterion.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/terminal_calls.f90",
 		"/home/georgy/Documents/program/additional_programs/kinematics/code/synthnolimo.f90",
@@ -608,10 +608,7 @@
 		"/home/gemma/Documents/WD_population_40pc/code/trajectories/trajectories.f",
 		"/home/gemma/Documents/WD_population_40pc/code/velocities/velocities.f",
 		"/home/gemma/Documents/WD_population_40pc/code/coordinates/polar.f",
-		"/home/gemma/Documents/WD_population_40pc/code/luminosities/luminosities.f",
-		"/home/gemma/Documents/WD_population_40pc/code/cooling/unknown/incoolea.f",
-		"/home/gemma/Documents/WD_population_40pc/code/star_generation/generator.f",
-		"/home/gemma/Documents/FL40_disk_copy/disk40.b"
+		"/home/gemma/Documents/WD_population_40pc/code/luminosities/luminosities.f"
 	],
 	"find":
 	{
@@ -630,10 +627,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"inputData",
-			"unitInput",
-			"numberOfWDs",
-			"INPUT_PATH",
+			"fillFullDataForMbolBins",
+			"unitMbolAvg",
+			"MBOL_AVG_PATH",
+			"getSD",
+			"getNewUnit",
+			"JaggedArray",
+			"Star",
+			"dp",
+			"OUTPUT_FORMAT",
+			"CLOUD_FORMAT",
+			"unitCloud",
+			"MBOL_CLOUD_PATH",
+			"Star",
+			"UVW_PATH",
+			"sampleUvsV",
 			"MBOL_MIN",
 			"MBOL_AVG_FORMAT",
 			"MBOL_AVG_U_PATH",
@@ -746,18 +754,7 @@
 			"Hbjcurve",
 			"Hgcurve",
 			"leb",
-			"dec",
-			"arec",
-			"rightAscen",
-			"arec",
-			"20",
-			"mu",
-			"cont",
-			"zmedia",
-			"xya",
-			"\t",
-			"9826",
-			"( "
+			"dec"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -765,6 +762,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"CLOUD_U_FORMAT",
 			"binsUvsMbol",
 			"whiteDwarfs",
 			"highestCoordValue",
@@ -896,65 +894,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/synthetic.f90",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11712,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5503,
-								5503
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1485.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/observational.f90",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4441,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								113,
-								113
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1001,7 +942,7 @@
 	{
 		"height": 88.0
 	},
-	"pinned_build_system": "Packages/User/kinematics.sublime-build",
+	"pinned_build_system": "Packages/User/myBuildSystems/kinematics.sublime-build",
 	"project": "kinematics.sublime-project",
 	"replace":
 	{
