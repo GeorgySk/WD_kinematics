@@ -355,7 +355,16 @@
 			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/.gitignore",
 			"settings":
 			{
-				"buffer_size": 235,
+				"buffer_size": 255,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/georgy/.bashrc",
+			"settings":
+			{
+				"buffer_size": 3761,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -485,16 +494,11 @@
 	},
 	"expanded_folders":
 	[
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/observ",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/observ/limoges",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/sublime_files",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/sublime_files/config copies"
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics"
 	],
 	"file_history":
 	[
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/.gitignore",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/2_plot_mbol.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/1_math.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/synth/limoges/uv.dat",
@@ -621,8 +625,7 @@
 		"/home/gemma/Documents/WD_population_40pc/code/external_types.f",
 		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/DA/intermag.f",
 		"/home/gemma/Documents/WD_population_40pc/code/cooling/ONe/incoolone.f",
-		"/home/gemma/Documents/WD_population_40pc/code/tables_linking.f",
-		"/home/gemma/Documents/WD_population_40pc/code/math/toSort.f"
+		"/home/gemma/Documents/WD_population_40pc/code/tables_linking.f"
 	],
 	"find":
 	{
@@ -908,7 +911,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -917,15 +920,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 235,
+						"buffer_size": 255,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								234,
-								234
+								255,
+								255
 							]
 						],
 						"settings":
@@ -934,6 +937,34 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/georgy/.bashrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3314,
+								3314
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1290.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

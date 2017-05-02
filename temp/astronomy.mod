@@ -1,178 +1,40 @@
-GFORTRAN module version '9' created from ./modules/dependants/astronomy.f90
-MD5:2b8f9dcc642a7e16881a30b6ef8b045d -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '9' created from ./modules/2_astronomy.f90
+MD5:2505906c2aff67280c7c3110db1ddddb -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
 
 ()
 
-(('lock_type' 'iso_fortran_env' 2))
-
 ()
 
 ()
 
 ()
 
-(2 'Lock_type' 'iso_fortran_env' '' 1 ((DERIVED UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 PRIVATE_COMP ZERO_COMP) (UNKNOWN 0 0 0
-0 UNKNOWN ()) 0 0 () () 0 () () () 1 28 0)
-3 'astronomy' 'astronomy' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0
-0)
-4 'atomic_int_kind' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 1 0)
-5 'atomic_logical_kind' 'iso_fortran_env' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
-() () 1 1)
-6 'character_kinds' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION) (INTEGER 4 0 0 0 INTEGER ())
-0 0 () (ARRAY (INTEGER 4 0 0 0 INTEGER ()) 1 (((CONSTANT (INTEGER 4 0 0
-0 INTEGER ()) 0 '1') ()) ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4')
-())) ('2')) (1 0 EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1')
-(CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2')) 0 () () () 1 22)
-7 'character_storage_size' 'iso_fortran_env' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 ()
-() () 1 2)
-8 'compiler_options' 'iso_fortran_env' '' 1 ((PROCEDURE UNKNOWN-INTENT
-UNKNOWN-PROC DECL UNKNOWN 0 0 INTRINSIC FUNCTION) (CHARACTER 1 0 0 0
-CHARACTER ()) 0 0 () () 0 () () () 1 37)
-9 'compiler_version' 'iso_fortran_env' '' 1 ((PROCEDURE UNKNOWN-INTENT
-UNKNOWN-PROC DECL UNKNOWN 0 0 INTRINSIC FUNCTION) (CHARACTER 1 0 0 0
-CHARACTER ()) 0 0 () () 0 () () () 1 38)
-10 'convertdegreestorad' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
-MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL
-()) 11 0 (12) () 13 () () () 0 0)
-14 'convertequatormotiontouvw' 'astronomy' '' 1 ((PROCEDURE
+()
+
+(2 'convertdegreestorad' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION ELEMENTAL PURE ALWAYS_EXPLICIT) (
+REAL 8 0 0 0 REAL ()) 3 0 (4) () 5 () () () 0 0)
+6 'convertequatormotiontouvw' 'astronomy' '' 1 ((PROCEDURE
 UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 15 0 (16 17 18 19 20 21) () 0 () () () 0 0)
-22 'convertequatortogalact' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN ()) 7 0 (8 9 10 11 12 13) () 0 () () () 0 0)
+14 'convertequatortogalact' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE IMPLICIT_PURE) (UNKNOWN 0 0 0 0
-UNKNOWN ()) 23 0 (24 25 26 27) () 0 () () () 0 0)
-28 'convertgalactictoxyz' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN ()) 15 0 (16 17 18 19) () 0 () () () 0 0)
+20 'convertgalactictoxyz' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 DIMENSION FUNCTION IMPLICIT_PURE
-ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 29 0 (30 31 32) (1 0 EXPLICIT (
+ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 21 0 (22 23 24) (1 0 EXPLICIT (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '3')) 33 () () () 0 0)
-34 'converthourstorad' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
-MODULE-PROC DECL UNKNOWN 0 0 FUNCTION IMPLICIT_PURE) (REAL 8 0 0 0 REAL
-()) 35 0 (36) () 37 () () () 0 0)
-38 'ctk' 'astronomy' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+INTEGER ()) 0 '3')) 25 () () () 0 0)
+26 'converthourstorad' 'astronomy' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 FUNCTION ELEMENTAL PURE ALWAYS_EXPLICIT) (
+REAL 8 0 0 0 REAL ()) 27 0 (28) () 29 () () () 0 0)
+30 'ctk' 'astronomy' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (
 REAL 8 0 0 0 REAL ()) 0 '0.4bd8f7121ab4b8@1') () 0 () () () 0 0)
-39 'error_unit' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 1 3)
-40 'file_storage_size' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 1 4)
-41 'input_unit' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 () () () 1 5)
-42 'int16' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 1 7)
-43 'int32' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 1 8)
-44 'int64' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 1 9)
-45 'int8' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 1 6)
-46 'integer_kinds' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION) (INTEGER 4 0 0 0 INTEGER ())
-0 0 () (ARRAY (INTEGER 4 0 0 0 INTEGER ()) 1 (((CONSTANT (INTEGER 4 0 0
-0 INTEGER ()) 0 '1') ()) ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2')
-()) ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') ()) ((CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '8') ()) ((CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '16') ())) ('5')) (1 0 EXPLICIT (CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5')) 0 () ()
-() 1 23)
-47 'iostat_end' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-1') () 0 () () () 1 10)
-48 'iostat_eor' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-2') () 0 () () () 1 11)
-49 'iostat_inquire_internal_unit' 'iso_fortran_env' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5018') () 0
-() () () 1 12)
-50 'iso_fortran_env' 'iso_fortran_env' '' 1 ((MODULE UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 INTRINSIC) (UNKNOWN 0 0 0 0 UNKNOWN ())
-0 0 () () 0 () () () 1 0)
-51 'lock_type' 'iso_fortran_env' '' 1 ((PROCEDURE UNKNOWN-INTENT
-UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
-()) 0 0 () () 0 () () () 1 28)
-52 'logical_kinds' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION) (INTEGER 4 0 0 0 INTEGER ())
-0 0 () (ARRAY (INTEGER 4 0 0 0 INTEGER ()) 1 (((CONSTANT (INTEGER 4 0 0
-0 INTEGER ()) 0 '1') ()) ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2')
-()) ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') ()) ((CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '8') ()) ((CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '16') ())) ('5')) (1 0 EXPLICIT (CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5')) 0 () ()
-() 1 24)
-53 'math' 'math' '' 1 ((MODULE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
-UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-54 'multiplymatrixbyvector' 'math' '' 1 ((PROCEDURE UNKNOWN-INTENT
-MODULE-PROC DECL UNKNOWN 0 0 DIMENSION FUNCTION IMPLICIT_PURE
-ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 55 0 (56 57) (1 0 EXPLICIT (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '3')) 58 () () () 0 0)
-59 'numeric_storage_size' 'iso_fortran_env' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '32') () 0 ()
-() () 1 13)
-60 'output_unit' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 () () () 1 14)
-61 'pi' 'math' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
-IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () (CONSTANT (REAL 8 0 0 0
-REAL ()) 0 '0.3243f6a8885a30@1') () 0 () () () 0 0)
-62 'real128' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 () () () 1 17)
-63 'real32' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 1 15)
-64 'real64' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 1 16)
-65 'real_kinds' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION) (INTEGER 4 0 0 0 INTEGER ())
-0 0 () (ARRAY (INTEGER 4 0 0 0 INTEGER ()) 1 (((CONSTANT (INTEGER 4 0 0
-0 INTEGER ()) 0 '4') ()) ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8')
-()) ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') ()) ((CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '16') ())) ('4')) (1 0 EXPLICIT (CONSTANT
-(INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
-0 '4')) 0 () () () 1 25)
-66 'reshape' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN UNKNOWN 0 0 FUNCTION) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 66
-() () () 0 0)
-67 'shape' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN UNKNOWN 0 0 FUNCTION) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 67
-() () () 0 0)
-68 'stat_locked' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 1 18)
-69 'stat_locked_other_image' 'iso_fortran_env' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
-() () 1 19)
-70 'stat_stopped_image' 'iso_fortran_env' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6000') () 0
-() () () 1 20)
-71 'stat_unlocked' 'iso_fortran_env' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 1 21)
-72 'tran_matr' 'astronomy' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+31 'tran_matr' 'astronomy' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION) (REAL 8 0 0 0 REAL ()) 0 0 () (
 ARRAY (REAL 8 0 0 0 REAL ()) 2 (((CONSTANT (REAL 8 0 0 0 REAL ()) 0
 '-0.e0c49ba5e353f8@-1') ()) ((CONSTANT (REAL 8 0 0 0 REAL ()) 0
@@ -187,76 +49,52 @@ ARRAY (REAL 8 0 0 0 REAL ()) 2 (((CONSTANT (REAL 8 0 0 0 REAL ()) 0
 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0
 INTEGER ()) 0 '3')) 0 () () () 0 0)
-30 'r' '' '' 29 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+23 'l' '' '' 21 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-33 'coordinate' '' '' 29 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+24 'b' '' '' 21 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+25 'coordinate' '' '' 21 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0 DIMENSION RESULT ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 0 0
 () (1 0 EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3')) 0 () () () 0 0)
-31 'l' '' '' 29 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+22 'r' '' '' 21 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-32 'b' '' '' 29 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-58 'y' '' '' 55 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0
-0 DIMENSION RESULT ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0
-EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '3')) 0 () () () 0 0)
-57 'x' '' '' 55 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
-DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 EXPLICIT (CONSTANT (INTEGER 4
-0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3'))
-0 () () () 0 0)
-56 'a' '' '' 55 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
-DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (2 0 EXPLICIT (CONSTANT (INTEGER 4
-0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '3')) 0 () () () 0 0)
-36 'angleinhours' '' '' 35 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
+28 'angleinhours' '' '' 27 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
 0 DUMMY) (CHARACTER 1 0 0 0 CHARACTER ((CONSTANT (INTEGER 4 0 0 0
 INTEGER ()) 0 '11'))) 0 0 () () 0 () () () 0 0)
-37 'angleinradians' '' '' 35 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN UNKNOWN 0 0 RESULT) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () ()
-0 0)
-12 'angleindegrees' '' '' 11 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN
-0 0 DUMMY) (CHARACTER 1 0 0 0 CHARACTER ((CONSTANT (INTEGER 4 0 0 0
+29 'angleinradians' '' '' 27 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 RESULT ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 0 0 ()
+() 0 () () () 0 0)
+4 'angleindegrees' '' '' 3 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (CHARACTER 1 0 0 0 CHARACTER ((CONSTANT (INTEGER 4 0 0 0
 INTEGER ()) 0 '11'))) 0 0 () () 0 () () () 0 0)
-13 'angleinradians' '' '' 11 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN UNKNOWN 0 0 RESULT) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () ()
-0 0)
-25 'dec' '' '' 23 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+5 'angleinradians' '' '' 3 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 RESULT ALWAYS_EXPLICIT) (REAL 8 0 0 0 REAL ()) 0 0 ()
+() 0 () () () 0 0)
+17 'dec' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-24 'ra' '' '' 23 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+16 'ra' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-26 'l' '' '' 23 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+18 'l' '' '' 15 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-27 'b' '' '' 23 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+19 'b' '' '' 15 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-16 'rightascension' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN
-0 0 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-17 'declination' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+8 'rightascension' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0
+0 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+9 'declination' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-18 'distance' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+10 'distance' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-19 'motionindec' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+11 'motionindec' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-20 'motioninra' '' '' 15 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+12 'motioninra' '' '' 7 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-21 'vel_hel' '' '' 15 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+13 'vel_hel' '' '' 7 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DIMENSION DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 EXPLICIT (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
 0 '3')) 0 () () () 0 0)
 )
 
-('Lock_type' 0 2 'astronomy' 0 3 'atomic_int_kind' 0 4
-'atomic_logical_kind' 0 5 'character_kinds' 0 6 'character_storage_size'
-0 7 'compiler_options' 0 8 'compiler_version' 0 9 'convertdegreestorad'
-0 10 'convertequatormotiontouvw' 0 14 'convertequatortogalact' 0 22
-'convertgalactictoxyz' 0 28 'converthourstorad' 0 34 'ctk' 0 38
-'error_unit' 0 39 'file_storage_size' 0 40 'input_unit' 0 41 'int16' 0
-42 'int32' 0 43 'int64' 0 44 'int8' 0 45 'integer_kinds' 0 46 'iostat_end'
-0 47 'iostat_eor' 0 48 'iostat_inquire_internal_unit' 0 49
-'iso_fortran_env' 0 50 'lock_type' 0 51 'logical_kinds' 0 52 'math' 0 53
-'multiplymatrixbyvector' 0 54 'numeric_storage_size' 0 59 'output_unit'
-0 60 'pi' 0 61 'real128' 0 62 'real32' 0 63 'real64' 0 64 'real_kinds' 0
-65 'reshape' 0 66 'shape' 0 67 'stat_locked' 0 68
-'stat_locked_other_image' 0 69 'stat_stopped_image' 0 70 'stat_unlocked'
-0 71 'tran_matr' 0 72)
+('convertdegreestorad' 0 2 'convertequatormotiontouvw' 0 6
+'convertequatortogalact' 0 14 'convertgalactictoxyz' 0 20
+'converthourstorad' 0 26 'ctk' 0 30 'tran_matr' 0 31)
