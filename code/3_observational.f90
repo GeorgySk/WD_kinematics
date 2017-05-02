@@ -79,10 +79,12 @@ contains
                                        sampleWvsMbol)
             call plotUVWvsUVW(sampleUvsV, &
                               sampleUvsW, &
-                              sampleVvsW)
+                              sampleVvsW, &
+                              "observational")
             call plotUVWvsMbol(sampleUvsMbol, &
                                sampleVvsMbol, &
-                               sampleWvsMbol)
+                               sampleWvsMbol, &
+                               "observational")
             print *, "Average velocity components:", &
                 sum(sampleUvsMbol(:)%vel(1)) / size(sampleUvsMbol), &
                 sum(sampleVvsMbol(:)%vel(2)) / size(sampleVvsMbol), &
@@ -92,8 +94,8 @@ contains
                 getSD(sampleVvsMbol(:)%vel(2)), &
                 getSD(sampleWvsMbol(:)%vel(3))
         else 
-            call plotUVWvsUVW(whiteDwarfs)
-            call plotUVWvsMbol(whiteDwarfs)
+            call plotUVWvsUVW(whiteDwarfs, "observational")
+            call plotUVWvsMbol(whiteDwarfs, "observational")
             print *, "Average velocity components:", &
                 sum(whiteDwarfs(:)%vel(1)) / size(whiteDwarfs), &
                 sum(whiteDwarfs(:)%vel(2)) / size(whiteDwarfs), &

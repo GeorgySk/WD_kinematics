@@ -16,11 +16,9 @@ module synthetic
 
     public :: treatSynthData
 
-        character(len = *), parameter :: INPUT_PATH = '/home/georgy&
-                                                      &/Documents/program&
-                                                      &/WD_population_40pc&
-                                                      &/output_data&
-                                                      &/boot_rowell_thin_1.out'
+        character(len = *), parameter :: INPUT_PATH &
+            = '/home/georgy/Documents/program/WD_population_40pc/output_data&
+              &/boot_rowell_thin_1.out'
 contains
 
     subroutine treatSynthData(limogesCriterionIsUsed)
@@ -71,10 +69,12 @@ contains
                                        sampleWvsMbol)
             call plotUVWvsUVW(sampleUvsV, &
                               sampleUvsW, &
-                              sampleVvsW)
+                              sampleVvsW, &
+                              "synthetic")
             call plotUVWvsMbol(sampleUvsMbol, &
                                sampleVvsMbol, &
-                               sampleWvsMbol)
+                               sampleWvsMbol, &
+                               "synthetic")
             print *, "Average velocity components:", &
                 sum(sampleUvsMbol(:)%vel(1)) / size(sampleUvsMbol), &
                 sum(sampleVvsMbol(:)%vel(2)) / size(sampleVvsMbol), &
@@ -84,8 +84,8 @@ contains
                 getSD(sampleVvsMbol(:)%vel(2)), &
                 getSD(sampleWvsMbol(:)%vel(3))
         else 
-            call plotUVWvsUVW(whiteDwarfs)
-            call plotUVWvsMbol(whiteDwarfs)
+            call plotUVWvsUVW(whiteDwarfs, "synthetic")
+            call plotUVWvsMbol(whiteDwarfs, "synthetic")
             print *, "Average velocity components:", &
                 sum(whiteDwarfs(:)%vel(1)) / size(whiteDwarfs), &
                 sum(whiteDwarfs(:)%vel(2)) / size(whiteDwarfs), &
