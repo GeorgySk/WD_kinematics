@@ -1,0 +1,16 @@
+# Compiled source #
+###################
+*.mod
+*.o
+*.exe
+
+# Logs and outputs #
+####################
+*.out
+*.dat
+
+# Sublime Text 3 generated files #
+##################################
+*.sublime-project
+*.sublime-build
+*.sublime-settings
