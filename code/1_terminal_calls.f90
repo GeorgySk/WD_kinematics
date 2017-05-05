@@ -1,23 +1,24 @@
 module terminal_calls
-
     implicit none
-
     public :: readArguments
-
 contains
 
-    subroutine readArguments(obsDataIsUsed, synthDataIsUsed, limogesCritIsUsed)
 
-        implicit none
+    subroutine readArguments(obsDataIsUsed, &
+                             synthDataIsUsed, &
+                             limogesCritIsUsed, &
+                             splittingNonDAFromDA)
         integer :: num_args, i
         character(len = 12), dimension(:), allocatable :: args
         logical, intent(out) :: obsDataIsUsed
         logical, intent(out) :: synthDataIsUsed
         logical, intent(out) :: limogesCritIsUsed
+        logical, intent(out) :: splittingNonDAFromDA
     
         obsDataIsUsed = .false.
         synthDataIsUsed = .false.
         limogesCritIsUsed = .false.
+        splittingNonDAFromDA = .false.
     
         num_args = command_argument_count()
     
@@ -36,6 +37,8 @@ contains
                         synthDataIsUsed = .true.
                     case ("-l")
                         limogesCritIsUsed = .true.
+                    case ("-d")
+                        splittingNonDAFromDA = .true.
                     case default
                         print*, "Wrong argument. Please, use following:"
                         call printHelp
@@ -45,24 +48,33 @@ contains
         end if
     
         if (obsDataIsUsed .eqv. synthDataIsUsed) then
-            print*, "Wrong argument sequence. Please, use following:"
+            print *, "Wrong argument sequence. Please, use following:"
             call printHelp
             stop
         endif
-    
+
+        if (splittingNonDAFromDA .eqv. (obsDataIsUsed .or. synthDataIsUsed &
+                                        .or. limogesCritIsUsed)) then
+            print *, "Calculating velocities separately for DA and nonDA WDs &
+                      &now is only available for data from Limoges article &
+                      &and no selection criteria cannot be applied for the &
+                      &moment."
+            call printHelp
+            stop
+        end if
+
     end subroutine readArguments
 
 
     subroutine printHelp()
-
-        implicit none
-        print*, "   -o - for observational data without Limoges criterion"
-        print*, "   -o -l - for observational data with applied Limoges criterion"
-        print*, "   -s - for data from population synthesis code without &
-                        &Limoges criterion"
-        print*, "   -s -l - for data from population synthesis code with &
-                            &applied criterion of Limoges"
-
+        print *, "   -o - for observational data without Limoges criterion"
+        print *, "   -o -l - for observational data with applied Limoges &
+                             &criterion"
+        print *, "   -s - for data from population synthesis code without &
+                          &Limoges criterion"
+        print *, "   -s -l - for data from population synthesis code with &
+                             &applied criterion of Limoges"
+        print *, "   -d - to get velocities for DA and nonDA WDs separately &
+                          &from Limoges article"                            
     end subroutine printHelp
-    
 end module terminal_calls

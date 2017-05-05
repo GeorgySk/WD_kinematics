@@ -11,14 +11,22 @@ program main
     implicit none
     logical :: obsDataIsUsed, &
                syntDataIsUsed, &
-               limogesCriterionFlag
+               limogesCriterionFlag, &
+               splittingNonDAFromDAFlag
 
-    call readArguments(obsDataIsUsed, syntDataIsUsed, limogesCriterionFlag)
+    call readArguments(obsDataIsUsed, &
+                       syntDataIsUsed, &
+                       limogesCriterionFlag, &
+                       splittingNonDAFromDAFlag)
 
     if (obsDataIsUsed) then
-        call treatObservData(limogesCriterionFlag)
+        call treatObservData(limogesCriterionFlag, &
+                             splittingNonDAFromDAFlag)
     else if (syntDataIsUsed) then
         call treatSynthData(limogesCriterionFlag)
+    else if (splittingNonDAFromDAFlag) then
+        call treatObservData(limogesCriterionFlag, &
+                             splittingNonDAFromDAFlag)
     else
         print*, "Critical error: check 'subroutine readArguments'"
     end if

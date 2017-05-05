@@ -20,12 +20,14 @@ module observational
 
     character(len=*), parameter :: INPUT_PATH = './inputs&
                                                  &/observational.dat'
-
 contains
 
-    subroutine treatObservData(limogesCriterionIsUsed)
+
+    subroutine treatObservData(limogesCriterionIsUsed, &
+                               splittingNonDAFromDA)
 
         logical, intent(in) :: limogesCriterionIsUsed
+        logical, intent(in) :: splittingNonDAFromDA
         type (Star), dimension(:), allocatable :: whiteDwarfs
         type (Star), dimension(:), allocatable :: sampleUvsV, &
                                                   sampleUvsW, &

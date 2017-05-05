@@ -1,5 +1,5 @@
 GFORTRAN module version '9' created from ./code/1_terminal_calls.f90
-MD5:95e002748c99a22a2919ccdfa025940b -- If you edit this, you'll get what you deserve.
+MD5:ac96e7e0a1780abff852b3350d23c3e0 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () () ()
 () () ())
@@ -19,8 +19,8 @@ MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0
 0 () () 0 () () () 0 0)
 3 'readarguments' 'terminal_calls' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 4
-0 (5 6 7) () 0 () () () 0 0)
-8 'terminal_calls' 'terminal_calls' '' 1 ((MODULE UNKNOWN-INTENT
+0 (5 6 7 8) () 0 () () () 0 0)
+9 'terminal_calls' 'terminal_calls' '' 1 ((MODULE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
 0 () () () 0 0)
 5 'obsdataisused' '' '' 4 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0
@@ -29,6 +29,8 @@ UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
 0 0 DUMMY) (LOGICAL 4 0 0 0 LOGICAL ()) 0 0 () () 0 () () () 0 0)
 7 'limogescritisused' '' '' 4 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0 DUMMY) (LOGICAL 4 0 0 0 LOGICAL ()) 0 0 () () 0 () () () 0 0)
+8 'splittingnondafromda' '' '' 4 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DUMMY) (LOGICAL 4 0 0 0 LOGICAL ()) 0 0 () () 0 () () () 0 0)
 )
 
-('printhelp' 0 2 'readarguments' 0 3 'terminal_calls' 0 8)
+('printhelp' 0 2 'readarguments' 0 3 'terminal_calls' 0 9)
