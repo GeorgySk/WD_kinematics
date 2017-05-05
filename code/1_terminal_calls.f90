@@ -47,7 +47,8 @@ contains
             end do
         end if
     
-        if (obsDataIsUsed .eqv. synthDataIsUsed) then
+        if ((obsDataIsUsed .eqv. synthDataIsUsed) &
+            .and. (.not. splittingNonDAFromDA)) then
             print *, "Wrong argument sequence. Please, use following:"
             call printHelp
             stop

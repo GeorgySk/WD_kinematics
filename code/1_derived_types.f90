@@ -1,5 +1,5 @@
 module derived_types
-    use, intrinsic :: iso_fortran_env, dp=>real64
+    use, intrinsic :: iso_fortran_env, dp => real64
     use math, only: PI
     use astronomy, only: convertEquatorToGalact, &
                          convertGalacticToXYZ, &
@@ -22,6 +22,7 @@ module derived_types
                     longitude
         real(dp), dimension(3) :: coords, &
                                   vel
+        character(len = 5) :: spectralType
     contains
         procedure :: equatToGalact => star_equatToGalact
         procedure :: galactToXYZ => star_galactToXYZ
@@ -32,9 +33,8 @@ module derived_types
         type(Star), dimension(:), allocatable :: row
     end type JaggedArray
 
-    ! integer, save :: i = 1
-
 contains
+
 
     impure elemental subroutine star_equatToGalact(this)
         class (Star), intent(inout) :: this

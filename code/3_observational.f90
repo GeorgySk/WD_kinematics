@@ -20,6 +20,12 @@ module observational
 
     character(len=*), parameter :: INPUT_PATH = './inputs&
                                                  &/observational.dat'
+    character(len=*), parameter :: INPUT_PATH_WITH_WD_CLASSES &
+                                        = './inputs/observ_DA_nonDA.dat'
+    character(len=*), parameter :: OUTPUT_PATH_DA &
+                                        = './outputs/DA_nonDA/DA_kinem.dat'
+    character(len=*), parameter :: OUTPUT_PATH_NONDA &
+                                        = './outputs/DA_nonDA/nonDA_kinem.dat'
 contains
 
 
@@ -39,9 +45,11 @@ contains
                                                           DEC_inDegrees
         integer :: numberOfWDs, &
                    unitInput, &
+                   unitOutputDA, &
+                   unitOutputNonDA, &
                    i
 
-        numberOfWDs = getNumberOfLines(INPUT_PATH)
+        numberOfWDs = getNumberOfLines(INPUT_PATH_WITH_WD_CLASSES)
         
         allocate(whiteDwarfs(numberOfWDs))
 
@@ -51,7 +59,8 @@ contains
         print *, "Observational data from Limoges et al. 2015"
         print *, "Number of White Dwarfs:", numberOfWDs
 
-        open(getNewUnit(unitInput), file = INPUT_PATH, status='old')
+        open(getNewUnit(unitInput), file = INPUT_PATH_WITH_WD_CLASSES, &
+             status='old')
         
         do i = 1, numberOfWDs
             read(unitInput, *) whiteDwarfs(i)%distance, &
@@ -59,7 +68,8 @@ contains
                                DEC_inDegrees(i), &
                                whiteDwarfs(i)%motionInRA, &
                                whiteDwarfs(i)%motionInDEC, &
-                               whiteDwarfs(i)%magnitude
+                               whiteDwarfs(i)%magnitude, &
+                               whiteDwarfs(i)%spectralType
         end do
 
         whiteDwarfs(:)%rightAscension = convertHoursToRad(RA_inHours(:))
@@ -106,6 +116,22 @@ contains
                 getSD(whiteDwarfs(:)%vel(1)), &
                 getSD(whiteDwarfs(:)%vel(2)), &
                 getSD(whiteDwarfs(:)%vel(3))
+        end if
+
+        if (splittingNonDAFromDA) then
+            open(getNewUnit(unitOutputDA), file = OUTPUT_PATH_DA)
+            open(getNewUnit(unitOutputNonDA), file = OUTPUT_PATH_NONDA)
+            do i = 1, numberOfWDs
+                if (whiteDwarfs(i)%spectralType == "DA") then
+                    write(unitOutputDA, *) whiteDwarfs(i)%vel
+                else if (whiteDwarfs(i)%spectralType == "nonDA") then
+                    write(unitOutputNonDA, *) whiteDwarfs(i)%vel
+                else 
+                    print *, "Error: while trying to write data about DA and &
+                              &nonDA kinematics program encountered something &
+                              & else:", whiteDwarfs(i)%spectralType
+                end if
+            end do
         end if
     end subroutine treatObservData
 end module
