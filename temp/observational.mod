@@ -1,5 +1,5 @@
 GFORTRAN module version '9' created from ./code/3_observational.f90
-MD5:53414eff549ce4078a69ec1113739e3c -- If you edit this, you'll get what you deserve.
+MD5:ab81a54c53d778bd3ba3cafdde26427a -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -87,10 +87,6 @@ ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 43 0 (44 45) () 0 () () ()
 0 0)
 42 'this' '' '' 41 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CLASS 46 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
-44 'src' '' '' 43 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
-12 'src' '' '' 11 ((VARIABLE IN UNKNOWN-PROC DECL UNKNOWN 0 0 DUMMY) (
-DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 13 'dst' '' '' 11 ((VARIABLE OUT UNKNOWN-PROC DECL UNKNOWN 0 0 DUMMY) (
 DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 17 'this' '' '' 16 ((VARIABLE INOUT UNKNOWN-PROC DECL UNKNOWN 0 0 DUMMY)
@@ -116,8 +112,12 @@ UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER) PRIVATE ()))
 UNKNOWN-ACCESS (() () () ()) () 0 0 0)
 48 'this' '' '' 47 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CLASS 46 0 0 0 CLASS ()) 0 0 () () 0 () () () 0 0)
+44 'src' '' '' 43 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 45 'dst' '' '' 43 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
+12 'src' '' '' 11 ((VARIABLE IN UNKNOWN-PROC DECL UNKNOWN 0 0 DUMMY) (
+DERIVED 8 0 0 0 DERIVED ()) 0 0 () () 0 () () () 0 0)
 )
 
 ('__vtab_derived_types_Star' 0 2 '__vtype_derived_types_Star' 0 3

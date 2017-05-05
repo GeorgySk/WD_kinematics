@@ -40,14 +40,20 @@ contains
                                                   sampleVvsW, &
                                                   sampleUvsMbol, &
                                                   sampleVvsMbol, &
-                                                  sampleWvsMbol
+                                                  sampleWvsMbol, &
+                                                  sampleDA, &
+                                                  sampleNonDA
         character(len = 11), dimension(:), allocatable :: RA_inHours, &
                                                           DEC_inDegrees
         integer :: numberOfWDs, &
                    unitInput, &
                    unitOutputDA, &
                    unitOutputNonDA, &
-                   i
+                   i, &
+                   counterDA, &
+                   counterNonDA
+        real(dp), dimension(3) :: sumOfDAVelocities, &
+                                  sumOfNonDAVelocities
 
         numberOfWDs = getNumberOfLines(INPUT_PATH_WITH_WD_CLASSES)
         
@@ -121,17 +127,62 @@ contains
         if (splittingNonDAFromDA) then
             open(getNewUnit(unitOutputDA), file = OUTPUT_PATH_DA)
             open(getNewUnit(unitOutputNonDA), file = OUTPUT_PATH_NONDA)
+            counterDA = 0
+            counterNonDA = 0
+            sumOfDAVelocities(:) = 0
+            sumOfNonDAVelocities(:) = 0
             do i = 1, numberOfWDs
                 if (whiteDwarfs(i)%spectralType == "DA") then
                     write(unitOutputDA, *) whiteDwarfs(i)%vel
+                    counterDA = counterDA + 1
                 else if (whiteDwarfs(i)%spectralType == "nonDA") then
                     write(unitOutputNonDA, *) whiteDwarfs(i)%vel
+                    counterNonDA = counterNonDA + 1
                 else 
                     print *, "Error: while trying to write data about DA and &
                               &nonDA kinematics program encountered something &
-                              & else:", whiteDwarfs(i)%spectralType
+                              &else:", whiteDwarfs(i)%spectralType
+                    stop
                 end if
             end do
+
+            allocate(sampleDA(counterDA))
+            allocate(sampleNonDA(counterNonDA))
+
+            counterDA = 0
+            counterNonDA = 0
+            do i = 1, numberOfWDs
+                if (whiteDwarfs(i)%spectralType == "DA") then
+                    counterDA = counterDA + 1
+                    sampleDA(counterDA) = whiteDwarfs(i)
+                else if (whiteDwarfs(i)%spectralType == "nonDA") then
+                    counterNonDA = counterNonDA + 1
+                    sampleNonDA(counterNonDA) = whiteDwarfs(i)
+                else 
+                    print *, "Error: while trying to write data about DA and &
+                              &nonDA kinematics program encountered something &
+                              &else:", whiteDwarfs(i)%spectralType
+                    stop
+                end if
+            end do
+            print *, "There are", counterDA, "of DA"
+            print *, "There are", counterNonDA, "of nonDA"
+            print *, "Average velocity components for DA:   ", &
+                sum(sampleDA(:)%vel(1)) / size(sampleDA), &
+                sum(sampleDA(:)%vel(2)) / size(sampleDA), &
+                sum(sampleDA(:)%vel(3)) / size(sampleDA)
+            print *, "Average velocity components for nonDA:", &
+                sum(sampleNonDA(:)%vel(1)) / size(sampleNonDA), &
+                sum(sampleNonDA(:)%vel(2)) / size(sampleNonDA), &
+                sum(sampleNonDA(:)%vel(3)) / size(sampleNonDA)
+            print *, "Standart deviations for DA:           ", &
+                getSD(sampleDA(:)%vel(1)), &
+                getSD(sampleDA(:)%vel(2)), &
+                getSD(sampleDA(:)%vel(3))
+            print *, "Standart deviations for nonDA:        ", &
+                getSD(sampleNonDA(:)%vel(1)), &
+                getSD(sampleNonDA(:)%vel(2)), &
+                getSD(sampleNonDA(:)%vel(3))
         end if
     end subroutine treatObservData
 end module
