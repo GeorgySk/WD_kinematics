@@ -23,9 +23,11 @@ module observational
     character(len=*), parameter :: INPUT_PATH_WITH_WD_CLASSES &
                                         = './inputs/observ_DA_nonDA.dat'
     character(len=*), parameter :: OUTPUT_PATH_DA &
-                                        = './outputs/DA_nonDA/DA_kinem.dat'
+                                        = './outputs/observ/&
+                                            &DA_nonDA/DA_kinem.dat'
     character(len=*), parameter :: OUTPUT_PATH_NONDA &
-                                        = './outputs/DA_nonDA/nonDA_kinem.dat'
+                                        = './outputs/observ/&
+                                            &DA_nonDA/nonDA_kinem.dat'
 contains
 
 

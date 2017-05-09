@@ -23,10 +23,13 @@ program main
         call treatObservData(limogesCriterionFlag, &
                              splittingNonDAFromDAFlag)
     else if (syntDataIsUsed) then
-        call treatSynthData(limogesCriterionFlag)
+        call treatSynthData(limogesCriterionFlag, &
+                            splittingNonDAFromDAFlag)
     else if (splittingNonDAFromDAFlag) then
         call treatObservData(limogesCriterionFlag, &
                              splittingNonDAFromDAFlag)
+        call treatSynthData(limogesCriterionFlag, &
+                            splittingNonDAFromDAFlag)
     else
         print*, "Critical error: check 'subroutine readArguments'"
     end if
