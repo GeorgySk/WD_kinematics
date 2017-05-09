@@ -1,4 +1,4 @@
-GFORTRAN module version '9' created from ./modules/2_astronomy.f90
+GFORTRAN module version '9' created from /home/georgy/Documents/program/additional_programs/WD_kinematics/modules/2_astronomy.f90
 MD5:2505906c2aff67280c7c3110db1ddddb -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()

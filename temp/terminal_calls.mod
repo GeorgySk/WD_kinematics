@@ -1,4 +1,4 @@
-GFORTRAN module version '9' created from ./code/1_terminal_calls.f90
+GFORTRAN module version '9' created from /home/georgy/Documents/program/additional_programs/WD_kinematics/code/1_terminal_calls.f90
 MD5:ac96e7e0a1780abff852b3350d23c3e0 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () () ()

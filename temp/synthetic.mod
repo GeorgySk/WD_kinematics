@@ -1,4 +1,4 @@
-GFORTRAN module version '9' created from ./code/3_synthetic.f90
+GFORTRAN module version '9' created from /home/georgy/Documents/program/additional_programs/WD_kinematics/code/3_synthetic.f90
 MD5:c9f6e65c2a4adf18e6526992f884b3eb -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()

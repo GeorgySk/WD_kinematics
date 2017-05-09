@@ -1,4 +1,4 @@
-GFORTRAN module version '9' created from ./code/2_criterion.f90
+GFORTRAN module version '9' created from /home/georgy/Documents/program/additional_programs/WD_kinematics/code/2_criterion.f90
 MD5:aac45cd3222c3a00d85388c28a7f6bdf -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()

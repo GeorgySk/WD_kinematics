@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"count",
+				"counterDA"
+			],
+			[
+				"sum",
+				"sumOfNonDAVelocities"
+			],
+			[
+				"whi",
+				"whiteDwarfs"
+			],
+			[
+				"uni",
+				"unitOutputNonDA"
+			],
+			[
+				"un",
+				"unitOutputNonDA"
+			],
+			[
+				"unit",
+				"unitOutputDA"
+			],
+			[
+				"OUT",
+				"OUTPUT_PATH_DA"
+			],
+			[
+				"treat",
+				"treatObservData"
+			],
+			[
 				"sam",
 				"sampleWvsMbol"
 			],
@@ -132,10 +164,6 @@
 				"counterOfWD"
 			],
 			[
-				"treat",
-				"treatSynthData"
-			],
-			[
 				"tre",
 				"treatObservData"
 			],
@@ -238,14 +266,6 @@
 			[
 				"param",
 				"parameter"
-			],
-			[
-				"un",
-				"unitUV"
-			],
-			[
-				"unit",
-				"unitVW"
 			],
 			[
 				"o",
@@ -351,6 +371,33 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/3_observational.f90",
+			"settings":
+			{
+				"buffer_size": 8489,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/main.sh",
+			"settings":
+			{
+				"buffer_size": 2043,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/georgy/.bashrc",
+			"settings":
+			{
+				"buffer_size": 4003,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/User/myBuildSystems/kinematics.sublime-build",
 	"build_system_choices":
@@ -477,13 +524,26 @@
 	"expanded_folders":
 	[
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules"
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/DA_nonDA"
 	],
 	"file_history":
 	[
 		"/home/georgy/.bashrc",
+		"/home/georgy/Documents/program/additional_programs/pyinstaller/pyinstaller.py",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/run-fortran/libz.so.1",
+		"/home/georgy/Documents/program/additional_programs/run-fortran/Dockerfile",
+		"/home/georgy/Documents/program/additional_programs/run-fortran/requirements.txt",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/DA_nonDA/DA_kinem.dat",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/DA_nonDA/nonDA_kinem.dat",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/main.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/1_terminal_calls.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/1_derived_types.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/main.sh",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/inputs/observ_DA_nonDA.dat",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/.gitignore",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/3_observational.f90",
+		"/home/georgy/Documents/program/additional_programs/WD_kinematics/sublime_files/kinematics.sublime-workspace",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/2_plot_mbol.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/modules/1_math.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/synth/limoges/uv.dat",
@@ -493,16 +553,13 @@
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/synth/limoges/mbol_avg_w.dat",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/synth/limoges/mbol_avg_v.dat",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/synth/limoges/mbol_avg_u.dat",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/3_observational.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/2_plot_uvw.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/observ/no_crit/uvw.dat",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/main.sh",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/observ/limoges/mbol_avg_u.dat",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/observ/limoges/mbol_avg_v.dat",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/sublime_files/kinematics.sublime-project",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/dependants/observational.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/outputs/observ/no_crit/mbol_avg.dat",
-		"/home/georgy/Documents/program/additional_programs/WD_kinematics/main.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_mbol.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/commons.f90",
 		"/home/georgy/Documents/program/additional_programs/WD_kinematics/code/plot_uvw.f90",
@@ -599,17 +656,7 @@
 		"/home/gemma/Documents/WD_population_40pc/input_data/observational_data/kinematics/Limoges2015",
 		"/home/gemma/Documents/texts/articles/kinematics/tab2.txt",
 		"/home/gemma/Documents/texts/articles/kinematics/tab4.txt",
-		"/home/gemma/Documents/texts/articles/kinematics/tab4.tex",
-		"/home/gemma/Documents/WD_population_40pc/code/colors/DB/byBergeron.f",
-		"/home/gemma/Documents/WD_population_40pc/code/colors/DA/byRenedo.f",
-		"/home/gemma/Documents/WD_population_40pc/code/cooling/DB/incooldb.f",
-		"/home/gemma/Documents/WD_population_40pc/code/cooling/DA/DA_cooling.f",
-		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/DA/interlumda.f",
-		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/DB/interlumdb.f",
-		"/home/gemma/Documents/WD_population_40pc/code/external_types.f",
-		"/home/gemma/Documents/WD_population_40pc/code/magnitudes/DA/intermag.f",
-		"/home/gemma/Documents/WD_population_40pc/code/cooling/ONe/incoolone.f",
-		"/home/gemma/Documents/WD_population_40pc/code/tables_linking.f"
+		"/home/gemma/Documents/texts/articles/kinematics/tab4.tex"
 	],
 	"find":
 	{
@@ -628,6 +675,23 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\\tablebreak",
+			"\\\\",
+			"DQ",
+			"DQ?",
+			"DAZ",
+			"DAH",
+			"DA+nonDA",
+			"DZ",
+			"DQpec",
+			"DA+dM",
+			"DZA",
+			"DC",
+			"DB",
+			"DC",
+			"&",
+			"\\tablebreak",
+			"\\\\",
 			"MBOL_AVG_OBS_U_PATH",
 			"mbol_avg_u_path",
 			"unitMbolAvgU",
@@ -738,24 +802,7 @@
 			"param",
 			"tms",
 			"cool",
-			"enanas",
-			"tm",
-			"plano",
-			"lb",
-			"mopro",
-			"index",
-			"mad",
-			"paral",
-			"vel",
-			"coorcil",
-			"/tracks/",
-			"common /tracks/",
-			"tracks",
-			"newone2",
-			"newone",
-			"colorsone",
-			"fredone2",
-			"fredone"
+			"enanas"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -763,6 +810,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"nonDA",
+			"",
 			"CLOUD_U_FORMAT",
 			"binsUvsMbol",
 			"whiteDwarfs",
@@ -889,14 +939,99 @@
 		"reverse": false,
 		"show_context": true,
 		"use_buffer2": true,
-		"whole_word": true,
+		"whole_word": false,
 		"wrap": true
 	},
 	"groups":
 	[
 		{
+			"selected": 2,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/code/3_observational.f90",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8489,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8279,
+								8279
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/SublimeFortran-master/grammars/FortranModern.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2002.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/home/georgy/Documents/program/additional_programs/WD_kinematics/main.sh",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2043,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								321,
+								321
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/georgy/.bashrc",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2664,
+								2664
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1260.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],
