@@ -1,4 +1,4 @@
-GFORTRAN module version '9' created from ./modules/1_math.f90
+GFORTRAN module version '9' created from /home/georgy/Documents/program/additional_programs/WD_kinematics/modules/1_math.f90
 MD5:34df5f518c1c84527287f932598f2c0e -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () () ()

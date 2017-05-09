@@ -1,4 +1,4 @@
-GFORTRAN module version '9' created from ./code/2_plot_uvw.f90
+GFORTRAN module version '9' created from /home/georgy/Documents/program/additional_programs/WD_kinematics/code/2_plot_uvw.f90
 MD5:b90305dded1d891ddd3e70042bc1fea3 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
