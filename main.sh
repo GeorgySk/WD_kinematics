@@ -36,7 +36,7 @@ rm $FOLDER/*.exe  # Deleting old executable
 files_to_be_compiled=$(python3.6 run-fortran.py run --path $FOLDER)
 
 
-# Determining compiler options of gfortran. Some other useful ones:
+# Determining compiler options of gfortran. Some useful ones are:
 #   -Wall - generate warnings about many common sources of bugs
 #   -Wextra - warnings about even more potential problems
 #   -Wconversion - warnings about implicit conversions
@@ -56,7 +56,7 @@ Fortran_compiler_options=$(echo "-Wall"\
                                 "-fbounds-check")
 
 
-# Compiling all files
+# Compiling all files:
 compiled_object_files=""  # Here we will put paths to .o files (ordered)
 for file in $files_to_be_compiled; do
     filename=${file##*/}  # Leaving only the name of the file
@@ -80,7 +80,7 @@ time $FOLDER/main.exe -d
 
 
 # Deleting unnecessary files:
-rm $TMP/*.o  # Deleting compiled object files, they always present
+rm $TMP/*.o  # Deleting compiled object files, they always appear
 # Sometimes linter can autogenerate garbage files. Deleting them:
 for file in $FOLDER/* $SRC/* $CODE/*; do
 	filename=${file##*/}  # Getting file name

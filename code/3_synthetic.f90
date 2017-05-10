@@ -4,12 +4,13 @@ module synthetic
     use, intrinsic :: iso_fortran_env, dp=>real64
     use files, only: getNumberOfLines, &
                      getNewUnit
-    use derived_types, only: Star
+    use derived_types, only: Star, JaggedArray
     use criterion, only: splitDataForUVWvsUVW, &
                          splitDataForUVWvsMbol
     use plot_uvw, only: plotUVWvsUVW
     use plot_mbol, only: plotUVWvsMbol
     use math, only: getSD
+
     implicit none
 
     private
@@ -51,6 +52,28 @@ contains
                                                   sampleWvsMbol, &
                                                   sampleDA, &
                                                   sampleNonDA
+
+
+
+
+        type (JaggedArray), dimension(:), allocatable :: bins
+        type (JaggedArray), dimension(:), allocatable :: binsNonDA
+        real(dp), parameter :: MBOL_MIN = 5.75_dp
+        real(dp), parameter :: MBOL_MAX = 20.75_dp
+        real(dp), parameter :: MBOL_INC = 0.5_dp
+        integer, parameter :: NUM_OF_BINS = int((MBOL_MAX - MBOL_MIN) &
+                                                / MBOL_INC)
+        integer :: binNumber
+        integer, dimension(NUM_OF_BINS) :: wdInBinCounter = 0
+        character(len = *), parameter :: MBOL_AVG_SYN_DA &
+            = './outputs/synth/DA_nonDA/mbol_avg_da.dat'
+        character(len = *), parameter :: MBOL_AVG_SYN_NONDA &
+            = './outputs/synth/DA_nonDA/mbol_avg_nonda.dat'
+        integer :: unitMbolAvgDA, unitMbolAvgNonDA
+        character(len = *), parameter :: MBOL_AVG_FORMAT = '(7(f12.6,3x))'
+
+
+
 
         numberOfWDs = getNumberOfLines(INPUT_PATH)
 
@@ -126,10 +149,12 @@ contains
             sumOfNonDAVelocities(:) = 0
             do i = 1, numberOfWDs
                 if (whiteDwarfs(i)%spectralType == "DA") then
-                    write(unitOutputDA, *) whiteDwarfs(i)%vel
+                    write(unitOutputDA, *) whiteDwarfs(i)%vel, &
+                                           whiteDwarfs(i)%magnitude
                     counterDA = counterDA + 1
                 else if (whiteDwarfs(i)%spectralType == "nonDA") then
-                    write(unitOutputNonDA, *) whiteDwarfs(i)%vel
+                    write(unitOutputNonDA, *) whiteDwarfs(i)%vel, &
+                                              whiteDwarfs(i)%magnitude
                     counterNonDA = counterNonDA + 1
                 else 
                     print *, "Error: while trying to write data about DA and &
@@ -176,6 +201,93 @@ contains
                 getSD(sampleNonDA(:)%vel(1)), &
                 getSD(sampleNonDA(:)%vel(2)), &
                 getSD(sampleNonDA(:)%vel(3))
+
+
+            ! Filling bins
+            allocate(bins(NUM_OF_BINS))
+            do i = 1, size(sampleDA)
+                if (sampleDA(i)%magnitude > MBOL_MIN .and. &
+                        sampleDA(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleDA(i)%magnitude - MBOL_MIN) &
+                                        / MBOL_INC)
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                end if
+            end do
+            do i = 1, NUM_OF_BINS
+                if (wdInBinCounter(i) > 0) then
+                    allocate(bins(i)%row(wdInBinCounter(i)))
+                end if
+            end do
+            wdInBinCounter = 0
+            do i = 1, size(sampleDA)
+                if (sampleDA(i)%magnitude > MBOL_MIN .and. &
+                        sampleDA(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleDA(i)%magnitude - MBOL_MIN) &
+                                        / MBOL_INC)
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                    bins(binNumber)%row(wdInBinCounter(binNumber)) = sampleDA(i)
+                end if
+            end do
+            open(getNewUnit(unitMbolAvgDA), file = MBOL_AVG_SYN_DA, status='old')
+            do i = 1, NUM_OF_BINS
+                if (allocated(bins(i)%row)) then
+                    write(unitMbolAvgDA, MBOL_AVG_FORMAT) &
+                        MBOL_MIN + MBOL_INC*(dfloat(i) - 0.5_dp), &
+                        sum(bins(i)%row(:)%vel(1)) &
+                            / size(bins(i)%row), &
+                        sum(bins(i)%row(:)%vel(2)) &
+                            / size(bins(i)%row), &
+                        sum(bins(i)%row(:)%vel(3)) &
+                            / size(bins(i)%row), &
+                        getSD(bins(i)%row(:)%vel(1)), &
+                        getSD(bins(i)%row(:)%vel(2)), &
+                        getSD(bins(i)%row(:)%vel(3))
+                end if
+            end do
+
+            wdInBinCounter(:) = 0
+
+            ! Filling bins
+            allocate(binsNonDA(NUM_OF_BINS))
+            do i = 1, size(sampleNonDA)
+                if (sampleNonDA(i)%magnitude > MBOL_MIN .and. &
+                        sampleNonDA(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleNonDA(i)%magnitude - MBOL_MIN) &
+                                        / MBOL_INC)
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                end if
+            end do
+            do i = 1, NUM_OF_BINS
+                if (wdInBinCounter(i) > 0) then
+                    allocate(binsNonDA(i)%row(wdInBinCounter(i)))
+                end if
+            end do
+            wdInBinCounter = 0
+            do i = 1, size(sampleNonDA)
+                if (sampleNonDA(i)%magnitude > MBOL_MIN .and. &
+                        sampleNonDA(i)%magnitude < MBOL_MAX) then
+                    binNumber = ceiling((sampleNonDA(i)%magnitude - MBOL_MIN) &
+                                        / MBOL_INC)
+                    wdInBinCounter(binNumber) = wdInBinCounter(binNumber) + 1
+                    binsNonDA(binNumber)%row(wdInBinCounter(binNumber)) = sampleNonDA(i)
+                end if
+            end do
+            open(getNewUnit(unitMbolAvgNonDA), file = MBOL_AVG_SYN_NONDA, status='old')
+            do i = 1, NUM_OF_BINS
+                if (allocated(binsNonDA(i)%row)) then
+                    write(unitMbolAvgNonDA, MBOL_AVG_FORMAT) &
+                        MBOL_MIN + MBOL_INC*(dfloat(i) - 0.5_dp), &
+                        sum(binsNonDA(i)%row(:)%vel(1)) &
+                            / size(binsNonDA(i)%row), &
+                        sum(binsNonDA(i)%row(:)%vel(2)) &
+                            / size(binsNonDA(i)%row), &
+                        sum(binsNonDA(i)%row(:)%vel(3)) &
+                            / size(binsNonDA(i)%row), &
+                        getSD(binsNonDA(i)%row(:)%vel(1)), &
+                        getSD(binsNonDA(i)%row(:)%vel(2)), &
+                        getSD(binsNonDA(i)%row(:)%vel(3))
+                end if
+            end do
         end if
     end subroutine
 end module
