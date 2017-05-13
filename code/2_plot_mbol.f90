@@ -195,13 +195,13 @@ contains
             open(getNewUnit(unitCloudV), file = mbol_cloud_v_path, status='old')
             do i = 1, size(sampleVvsMbol)
                 write(unitCloudV, CLOUD_U_FORMAT) sampleVvsMbol(i)%magnitude, &
-                                                sampleVvsMbol(i)%vel(1)
+                                                sampleVvsMbol(i)%vel(2)
             end do
 
             open(getNewUnit(unitCloudW), file = mbol_cloud_w_path, status='old')
             do i = 1, size(sampleWvsMbol)
                 write(unitCloudW, CLOUD_U_FORMAT) sampleWvsMbol(i)%magnitude, &
-                                                sampleWvsMbol(i)%vel(1)
+                                                sampleWvsMbol(i)%vel(3)
             end do
 
             ! Filling bins 
