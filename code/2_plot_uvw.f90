@@ -102,13 +102,13 @@ contains
             open(getNewUnit(unitUW), file = uw_path, status='old')
             do i = 1, size(sampleUvsW)
                 write(unitUW, UV_FORMAT) sampleUvsW(i)%vel(1), &
-                                             sampleUvsW(i)%vel(2)
+                                             sampleUvsW(i)%vel(3)
             end do 
 
             open(getNewUnit(unitVW), file = vw_path, status='old')
             do i = 1, size(sampleVvsW)
-                write(unitVW, UV_FORMAT) sampleVvsW(i)%vel(1), &
-                                             sampleVvsW(i)%vel(2)
+                write(unitVW, UV_FORMAT) sampleVvsW(i)%vel(2), &
+                                             sampleVvsW(i)%vel(3)
             end do
         end if 
     end subroutine threeSamples_plotUVWvsUVW
